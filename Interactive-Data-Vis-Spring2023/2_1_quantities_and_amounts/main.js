@@ -39,4 +39,8 @@ console.log("data", data)
     .attr("x", margin)
     .attr("y", d=> yScale(d.activity))
 
+    const xAxis = d3.axisBottom(xScale)
+    const yAxis = d3.axisLeft(yScale)
+
   })
+
