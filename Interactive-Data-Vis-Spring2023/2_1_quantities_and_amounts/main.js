@@ -42,5 +42,15 @@ console.log("data", data)
     const xAxis = d3.axisBottom(xScale)
     const yAxis = d3.axisLeft(yScale)
 
+
+    svg
+    .append("g")
+    .style("transform", `translate(0px, ${height - margin}px)`) 
+    .call(xAxis)
+  svg
+    .append("g")
+    .style("transform", `translate(${margin}px, 0px)`)
+    .call(yAxis)
+
   })
 
