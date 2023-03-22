@@ -22,7 +22,6 @@ d3.csv('incomeByYear.csv', d => {
   .domain(d3.extent(data, d => d.year))
   .range([margin.left,width-margin.right]);
 
-
   // CREATE SVG ELEMENT
   const svg = d3.select("#container")
   .append("svg")
@@ -34,7 +33,8 @@ d3.csv('incomeByYear.csv', d => {
   svg.append("text")
     .attr("class", "axis-label")
     .attr("x", width - margin.right)
-    .attr("y", height - margin.bottom/2 + 30)
+    .attr("y", height - margin.bottom/2
+    )
     .attr("fill", "black")
     .attr("text-anchor", "middle")
     .text("Year");
