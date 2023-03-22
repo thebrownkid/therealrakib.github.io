@@ -22,8 +22,8 @@ d3.json("environmentRatings.json", d3.autoType)
 
   //Democrats as blue. Republicans as Red.
   const colorScale= d3.scaleOrdinal()
-  .domain(["D", "R"])
-  .range(["Blue", "Red"])
+  .domain(["R", "D"])
+  .range(["red", "blue"])
 
 
   //using ideologyScore2020 to dictate size of the dots
