@@ -43,11 +43,16 @@ d3.json("environmentRatings.json", d3.autoType)
   //x and y axes being apended (just like last tutorial)
 
   const xAxis = d3.axisBottom(xScale)
+  .domain([0, 100])
+  .range([margin.left, width - margin.right]);
+
   const yAxis = d3.axisLeft(yScale)
+  .domain([0, 100])
+  .range([margin.left, width - margin.right]);
 
   svg
     .append("g")
-    .style("transform", `translate(0px, ${height - margin}px)`) 
+    .style("transform", `translate(0px, ${height - margin.bottom}px)`) 
     .call(xAxis)
   svg
     .append("g")
