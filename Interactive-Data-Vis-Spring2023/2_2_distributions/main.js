@@ -46,11 +46,22 @@ d3.json("environmentRatings.json", d3.autoType)
   svg.append("g")
   .attr("transform", `translate(0,${height - margin.bottom})`)
   .call(xAxis);
+  .append("text") // appending text to the x axis
+      .attr("class", "axis-label")
+      .attr("x", width - margin.right)
+      .attr("y", -10)
+      .text("envScore2020Lifetime")
 
   const yAxis = d3.axisLeft(yScale)
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
     .call(yAxis);
+    .append("text") // appending text to the y axis
+    .attr("class", "axis-label")
+    .attr("x", -height/2)
+    .attr("y", -margin.left + 10)
+    .attr("transform", "rotate(-90)")
+    .text("envScore2020")
 
 
     //scatterplot dots, x corresponds to envScoreLifetime, y corresponds to envScore2020,
