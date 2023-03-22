@@ -18,7 +18,7 @@ d3.csv('incomeByYear.csv', d => {
   .domain(d3.extent(data, d=>d.income))
   .range([height-margin.bottom,margin.top])
 
-  const xScale = d3.scaleTime()
+  const xScale = d3.scaleLinear()
   .domain(d3.extent(data, d => d.year))
   .range([margin.left,width-margin.right])
 
@@ -90,5 +90,4 @@ d3.csv('incomeByYear.csv', d => {
     .y0(yScale(0))
     .y1(d => yScale(d.income))
     )
-
 });
