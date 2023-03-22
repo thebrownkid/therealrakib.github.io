@@ -21,7 +21,7 @@ d3.json("environmentRatings.json", d3.autoType)
   .range([margin.left,width-margin.right])
 
   //Democrats as blue. Republicans as Red.
-  const color= d3.scaleOrdinal()
+  const colorScale= d3.scaleOrdinal()
   .domain(["D", "R"])
   .range(["Blue", "Red"])
 
