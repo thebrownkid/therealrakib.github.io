@@ -1,6 +1,6 @@
  /* CONSTANTS AND GLOBALS */
  const width = window.innerWidth * 0.8,
-  height = window.innerHeight * 0.8,
+  height = 900,
   margin = { top: 20, bottom: 50, left: 50, right: 20 };
 
 /* LOAD DATA */
@@ -29,6 +29,7 @@ d3.csv('incomeByYear.csv', d => {
   .attr("width", width)
   .attr("height", height)
 
+  //axis labels for X and Y
 
   svg.append("text")
     .attr("class", "axis-label")
