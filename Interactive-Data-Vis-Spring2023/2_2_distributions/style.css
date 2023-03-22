@@ -17,3 +17,9 @@ h3 {
 p {
   font-size: 1em;
 }
+
+table {
+  border-collapse: collapse;
+  outline-color: purple;
+  outline-style: solid;
+}
