@@ -33,7 +33,7 @@ d3.csv('incomeByYear.csv', d => {
 
   svg.append("text")
     .attr("class", "axis-label")
-    .attr("x", d => xScale(d.year))
+    .attr("x", width - margin.right)
     .attr("y", height - margin.bottom/2 + 30)
     .attr("fill", "black")
     .attr("text-anchor", "middle")
