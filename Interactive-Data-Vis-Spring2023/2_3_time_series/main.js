@@ -16,11 +16,11 @@ d3.csv('incomeByYear.csv', d => {
   // SCALES Y as Linear Scale and X as Time Scale as year
     const yScale = d3.scaleLinear()
   .domain([22000, 71000])
-  .range([height-margin.bottom,margin.top])
+  .range([height-margin.bottom,margin.top]);
 
   const xScale = d3.scaleTime()
   .domain(d3.extent(data, d => d.year))
-  .range([margin.left,width-margin.right])
+  .range([margin.left,width-margin.right]);
 
 
   // CREATE SVG ELEMENT
@@ -87,7 +87,7 @@ d3.csv('incomeByYear.csv', d => {
   .attr("stroke-width", 1.5)
   .attr("d", d3.area()
     .x(d => xScale(d.year))
-    .y0(yScale(0))
+    .y0(yScale(22000))
     .y1(d => yScale(d.income))
     )
 });
