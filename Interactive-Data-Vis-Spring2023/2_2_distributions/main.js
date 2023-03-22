@@ -40,28 +40,33 @@ d3.json("environmentRatings.json", d3.autoType)
   .attr("width", width)
   .attr("height", height)
 
-  //x and y axes being apended (just like last tutorial)
+  //x and y axes being apended
   
   const xAxis = d3.axisBottom(xScale)
   svg.append("g")
   .attr("transform", `translate(0,${height - margin.bottom})`)
-  .call(xAxis)
-  .append("text") // appending text to the x axis
-      .attr("class", "axis-label")
-      .attr("x", width - margin.right)
-      .attr("y", -10)
-      .text("envScore2020Lifetime");
+  .call(xAxis);
+
 
   const yAxis = d3.axisLeft(yScale)
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
-    .call(yAxis)
-    .append("text") // appending text to the y axis
-    .attr("class", "axis-label")
-    .attr("x", -height/2)
-    .attr("y", -margin.left + 10)
-    .attr("transform", "rotate(-90)")
-    .text("envScore2020");
+    .call(yAxis);
+
+  //text being added as label of the axes
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("x", width - margin.right)
+      .attr("y", -10)
+      .text("envScoreLifetime");
+
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("x", -height/2)
+      .attr("y", -margin.left + 10)
+      .attr("transform", "rotate(-90)")
+      .text("envScore2020");
 
 
     //scatterplot dots, x corresponds to envScoreLifetime, y corresponds to envScore2020,
