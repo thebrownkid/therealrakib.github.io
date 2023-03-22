@@ -55,18 +55,23 @@ d3.json("environmentRatings.json", d3.autoType)
 
   //text being added as label of the axes
 
-    svg.append("text")
-      .attr("class", "axis-label")
-      .attr("x", width - margin.right)
-      .attr("y", -10)
-      .text("envScoreLifetime");
+  svg.append("text")
+    .attr("class", "axis-label")
+    .attr("x", width - margin.right)
+    .attr("y", height - margin.bottom/2)
+    .attr("fill", "black")
+    .attr("text-anchor", "middle")
+    .text("envScoreLifetime");
 
-    svg.append("text")
-      .attr("class", "axis-label")
-      .attr("x", -height/2)
-      .attr("y", -margin.left + 10)
-      .attr("transform", "rotate(-90)")
-      .text("envScore2020");
+
+  svg.append("text")
+    .attr("class", "axis-label")
+    .attr("x", -height/2)
+    .attr("y", margin.left/2)
+    .attr("transform", "rotate(-90)")
+    .attr("fill", "black")
+    .attr("text-anchor", "middle")
+    .text("envScore2020");
 
 
     //scatterplot dots, x corresponds to envScoreLifetime, y corresponds to envScore2020,
