@@ -15,7 +15,7 @@ d3.csv('incomeByYear.csv', d => {
 
   // SCALES Y as Linear Scale and X as Time Scale as year
     const yScale = d3.scaleLinear()
-  .domain([22000, 71000]])
+  .domain([22000, 71000])
   .range([height-margin.bottom,margin.top])
 
   const xScale = d3.scaleTime()
