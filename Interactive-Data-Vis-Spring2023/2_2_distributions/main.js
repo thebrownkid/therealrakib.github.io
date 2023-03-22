@@ -41,23 +41,16 @@ d3.json("environmentRatings.json", d3.autoType)
   .attr("height", height)
 
   //x and y axes being apended (just like last tutorial)
-
+  
   const xAxis = d3.axisBottom(xScale)
-  .domain([0, 100])
-  .range([margin.left, width - margin.right]);
+  svg.append("g")
+  .attr("transform", `translate(0,${height - margin.bottom})`)
+  .call(xAxis);
 
   const yAxis = d3.axisLeft(yScale)
-  .domain([0, 100])
-  .range([margin.left, width - margin.right]);
-
-  svg
-    .append("g")
-    .style("transform", `translate(0px, ${height - margin.bottom}px)`) 
-    .call(xAxis)
-  svg
-    .append("g")
-    .style("transform", `translate(${margin}px, 0px)`)
-    .call(yAxis)
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(yAxis);
 
 
     //scatterplot dots, x corresponds to envScoreLifetime, y corresponds to envScore2020,
