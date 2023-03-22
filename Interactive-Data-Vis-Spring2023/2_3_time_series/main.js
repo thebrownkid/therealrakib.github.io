@@ -1,6 +1,6 @@
  /* CONSTANTS AND GLOBALS */
  const width = window.innerWidth * 0.8,
-  height = window.innerHeight * 0.8,
+  height = window.innerHeight * 0.8;
 
 /* LOAD DATA */
 d3.csv('incomeByYear.csv', d => {
