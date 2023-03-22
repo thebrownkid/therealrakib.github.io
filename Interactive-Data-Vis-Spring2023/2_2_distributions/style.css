@@ -23,3 +23,11 @@ table {
   outline-color: purple;
   outline-style: solid;
 }
+
+.rep {
+  color: red;
+}
+
+.dem {
+  color: blue;
+}
