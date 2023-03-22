@@ -30,26 +30,10 @@ d3.csv('incomeByYear.csv', d => {
   .attr("height", height)
 
 
-  // BUILD AND CALL AXES
-
-  const xAxis = d3.axisBottom(xScale)
-  svg.append("g")
-  .attr("transform", `translate(0,${height - margin.bottom})`)
-  .call(xAxis);
-
-
-  const yAxis = d3.axisLeft(yScale)
-  svg.append("g")
-    .attr("transform", `translate(${margin.left},0)`)
-    .call(yAxis);
-
-
-  //text being added as label of the axes
-
   svg.append("text")
     .attr("class", "axis-label")
     .attr("x", width - margin.right)
-    .attr("y", height - margin.bottom/2 + 50)
+    .attr("y", height - margin.bottom/2 + 30)
     .attr("fill", "black")
     .attr("text-anchor", "middle")
     .text("Year");
@@ -63,6 +47,20 @@ d3.csv('incomeByYear.csv', d => {
     .attr("fill", "black")
     .attr("text-anchor", "middle")
     .text("Median Annual Household Income");
+
+  // BUILD AND CALL AXES
+
+  const xAxis = d3.axisBottom(xScale)
+  svg.append("g")
+  .attr("transform", `translate(0,${height - margin.bottom})`)
+  .call(xAxis);
+
+
+  const yAxis = d3.axisLeft(yScale)
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(yAxis);
+
 
   // LINE GENERATOR FUNCTION
 
