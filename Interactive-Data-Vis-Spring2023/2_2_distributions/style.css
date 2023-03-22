@@ -23,3 +23,9 @@ table {
   outline-color: purple;
   outline-style: solid;
 }
+
+.axis-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-anchor: middle;
+}
