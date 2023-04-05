@@ -18,7 +18,7 @@ console.log("data", data)
 
     const yScale = d3.scaleBand()
     .domain(activity)
-    .range([margin, height - margin])
+    .range([height-margin, margin])
     .paddingInner(0.2)
     .paddingOuter(0.2);
 
@@ -35,7 +35,7 @@ console.log("data", data)
     .data(data)
     .join("rect")
     .attr("height", yScale.bandwidth())
-    .attr("width", d=> width - xScale(d.count)) 
+    .attr("width", d=> xScale(d.count)) 
     .attr("x", margin)
     .attr("y", d=> yScale(d.activity))
 
