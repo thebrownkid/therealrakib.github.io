@@ -28,8 +28,8 @@ d3.csv("incomeData.csv", d3.autoType)
 
   //using ideologyScore2020 to dictate size of the dots
 
-  const differenceScale = d3.scaleLinear()
-  .domain([0,d3.max(data.map(d => d.difference))])
+  const expScale = d3.scaleLinear()
+  .domain([0,d3.max(data.map(d => d.expenditure_perc))])
   .range([0,100])
   
     /* HTML ELEMENTS */
@@ -83,6 +83,6 @@ d3.csv("incomeData.csv", d3.autoType)
     .join("circle")
     .attr("cx", d => xScale(d.year))
     .attr("cy", d => yScale(d.income))
-    .attr("r",  d=>differenceScale(d.difference)/2.5)
+    .attr("r",  d=>expScale(d.expenditure_perc)/10)
     .attr("fill", d => colorScale(d.difference_mean))
   });
