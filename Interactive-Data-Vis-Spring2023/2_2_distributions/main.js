@@ -21,7 +21,7 @@ d3.csv("incomeData.csv", d3.autoType)
   .range([margin.left,width-margin.right])
 
   //Democrats as blue. Republicans as Red.
-  const colorScale= d3.scaleOrdinal()
+  const colorScale= d3.scaleSqrt()
   .domain(["2", "1"])
   .range(["red", "blue"])
 
