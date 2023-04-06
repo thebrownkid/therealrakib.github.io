@@ -16,7 +16,7 @@ d3.csv("incomeData.csv", d3.autoType)
   .domain(d3.extent(data, d=>d.income))
   .range([height-margin.bottom,margin.top])
 
-  const xScale = d3.scaleTime()
+  const xScale = d3.scaleLinear()
   .domain(d3.extent(data, d => d.year))
   .range([margin.left,width-margin.right])
 
