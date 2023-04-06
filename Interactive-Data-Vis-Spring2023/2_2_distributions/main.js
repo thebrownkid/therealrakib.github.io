@@ -83,6 +83,6 @@ d3.csv("incomeData.csv", d3.autoType)
     .join("circle")
     .attr("cx", d => xScale(d.year))
     .attr("cy", d => yScale(d.income))
-    .attr("r",  d=>differenceScale(d.difference)/10)
+    .attr("r",  d=>differenceScale(d.difference))
     .attr("fill", d => colorScale(d.difference_mean))
   });
