@@ -67,5 +67,5 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.downPayment))
     .attr("fill", "red")
-    .attr("fill-opacity", 0.8); // 80% opacity can help improve understanding a bit
+    .attr("fill-opacity", 0.7); // 70% opacity can help improve understanding a bit
 });
