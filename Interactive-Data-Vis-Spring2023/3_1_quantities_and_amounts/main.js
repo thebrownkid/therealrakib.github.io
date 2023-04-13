@@ -67,7 +67,7 @@ function draw() {
 
   svg.append("text")
   .attr("class", "axis-label")
-  .attr("x", width - margin.right)
+  .attr("x", (width - margin.right - margin.left) / 2 + margin.left)
   .attr("y", height - margin.bottom/2)
   .attr("fill", "black")
   .attr("text-anchor", "middle")
