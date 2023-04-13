@@ -13,7 +13,7 @@ let state = {
 };
 
 /* LOAD DATA */
-d3.csv('squirrelActivities.csv', d3.autoType)
+d3.csv('housingUnit.csv', d3.autoType)
    .then(raw_data => {
 console.log("raw_data", raw_data);
   // save our data to application state
@@ -24,15 +24,15 @@ console.log("raw_data", raw_data);
 /* INITIALIZING FUNCTION */
 // this will be run *one time* when the data finishes loading in
 function init() {
-  console.log(state.data.map(d => d.activity))
+  console.log(state.data.map(d => d.state_name))
   /* SCALES */
   xScale = d3.scaleBand()
-  .domain(state.data.map(d => d.activity))
+  .domain(state.data.map(d => d.state_name))
   .range([margin.left, width - margin.right])
   .paddingInner(0.2 )
 
   yScale = d3.scaleLinear()
-  .domain([0, d3.max(state.data, d => d.count)])
+  .domain([0, d3.max(state.data, d => d.housing_unit)])
   .range([height - margin.bottom, margin.top]);
 
 
@@ -71,7 +71,7 @@ function draw() {
   .attr("y", height - margin.bottom/2)
   .attr("fill", "black")
   .attr("text-anchor", "middle")
-  .text("Activity");
+  .text("State");
 
 
 svg.append("text")
@@ -81,7 +81,7 @@ svg.append("text")
   .attr("transform", "rotate(-90)")
   .attr("fill", "black")
   .attr("text-anchor", "middle")
-  .text("Count");
+  .text("Total Housing Units");
 
 
   const rect = svg
@@ -90,9 +90,9 @@ svg.append("text")
   .join("rect")
   .attr("class", "bar")
   .attr("width",  xScale.bandwidth())
-  .attr("x", d => xScale(d.activity))
-  .attr("y", d => yScale(d.count))
-  .attr("height",  d => height - margin.bottom -  yScale(d.count))
+  .attr("x", d => xScale(d.state_name))
+  .attr("y", d => yScale(d.housing_unit))
+  .attr("height",  d => height - margin.bottom -  yScale(d.housing_unit))
 
   console.log('svg from draw()', svg)
 
