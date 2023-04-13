@@ -6,12 +6,13 @@ const width = window.innerWidth * 0.8,
 
 /* LOAD DATA */
 d3.csv("incomeHousing.csv").then(data => {
-  // Parse numeric columns
+  // Parse numeric columns]
   data.forEach(d => {
-    d.year = +d.year;
-    d.income = +d.income;
-    d.downPayment = +d.downPayment;
+    d.year = +d.Year;
+    d.income = +d['Annual Median Household Income'];
+    d.downPayment = +d['Down Payment (20%)'];
   });
+  
 
   const svg = d3.select("#container")
     .append("svg")
