@@ -46,6 +46,18 @@ d3.csv("incomeHousing.csv").then(data => {
   svg.append("g")
     .call(yAxis);
 
+
+    //adding labels to the axes
+
+svg.append("text")
+  .attr("class", "axis-label")
+  .attr("x", -height/2)
+  .attr("y", margin.left/5)
+  .attr("transform", "rotate(-90)")
+  .attr("fill", "black")
+  .attr("text-anchor", "middle")
+  .text("Dollars ($)");
+
   // Add bars for income
   svg.selectAll(".income-bar")
     .data(data)
