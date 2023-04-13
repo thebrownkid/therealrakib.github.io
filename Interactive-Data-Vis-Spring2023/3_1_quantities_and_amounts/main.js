@@ -33,8 +33,7 @@ function init() {
 
   yScale = d3.scaleLinear()
   .domain([0, d3.max(state.data, d => d.count)])
-  .range([height - margin.bottom, margin.top])
-
+  .range([height - margin.bottom, margin.top]);
 
 
   draw(); // calls the draw function
@@ -92,8 +91,9 @@ svg.append("text")
   .attr("class", "bar")
   .attr("width",  xScale.bandwidth())
   .attr("x", d => xScale(d.activity))
-  .attr("y", d => yScale(d.count))
-  .attr("height",  d => height - yScale(d.count))
+  .attr("y", d => yScale(Math.max(0, d.count)))
+  .attr("height", d => height - yScale(Math.max(0, d.count)));
+
 
   console.log('svg from draw()', svg)
 
