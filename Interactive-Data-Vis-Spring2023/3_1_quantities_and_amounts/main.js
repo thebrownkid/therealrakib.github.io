@@ -87,7 +87,7 @@ svg.append("text")
   .attr("transform", "rotate(-90)")
   .attr("fill", "black")
   .attr("text-anchor", "middle")
-  .text("Total Housing");
+  .text("Total Housing Units");
 
 
   const rect = svg
