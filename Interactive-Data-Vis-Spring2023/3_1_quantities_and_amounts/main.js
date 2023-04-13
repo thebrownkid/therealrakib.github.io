@@ -77,7 +77,7 @@ function draw() {
 svg.append("text")
   .attr("class", "axis-label")
   .attr("x", -height/2)
-  .attr("y", margin.left/4)
+  .attr("y", margin.left/5)
   .attr("transform", "rotate(-90)")
   .attr("fill", "black")
   .attr("text-anchor", "middle")
