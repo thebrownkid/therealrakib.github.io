@@ -24,10 +24,10 @@ d3.csv("incomeHousing.csv").then(data => {
   const xScale = d3.scaleBand()
     .domain(data.map(d => d.year))
     .range([0, width])
-    .padding(0.2);
+    .padding(0.1);
 
   const yScale = d3.scaleLinear()
-    .domain([0, d3.max(data, d => Math.max(d.income, d.downPayment))])
+    .domain([0, d3.max(data, d => d.income)])
     .range([height, 0]);
 
   // Create and append axes
@@ -53,7 +53,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("class", "income-bar")
     .attr("x", d => xScale(d.year))
     .attr("y", d => yScale(d.income))
-    .attr("width", xScale.bandwidth() / 2)
+    .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.income))
     .attr("fill", "blue");
 
@@ -62,10 +62,10 @@ d3.csv("incomeHousing.csv").then(data => {
     .data(data)
     .join("rect")
     .attr("class", "downpayment-bar")
-    .attr("x", d => xScale(d.year) + xScale.bandwidth() / 2)
-    .attr("y", d => yScale(d.downPayment))
-    .attr("width", xScale.bandwidth() / 2)
-    .attr("height", d => height - yScale(d.downPayment))
-    .attr("fill", "orange");
+    .attr("x", d => xScale(d.year))
+    .attr("y", d => yScale(d.income) - (yScale(d.downPayment) - yScale(0)))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => yScale(d.downPayment) - yScale(0))
+    .attr("fill", "red");
 
 });
