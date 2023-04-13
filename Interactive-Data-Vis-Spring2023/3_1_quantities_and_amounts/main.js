@@ -71,7 +71,7 @@ function draw() {
   .attr("y", height - margin.bottom/2)
   .attr("fill", "black")
   .attr("text-anchor", "middle")
-  .text("State");
+  .text("State Name");
 
 
 svg.append("text")
@@ -81,7 +81,7 @@ svg.append("text")
   .attr("transform", "rotate(-90)")
   .attr("fill", "black")
   .attr("text-anchor", "middle")
-  .text("Total Housing Units");
+  .text("Total Housing");
 
 
   const rect = svg
