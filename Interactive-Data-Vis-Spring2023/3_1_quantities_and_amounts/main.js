@@ -37,7 +37,7 @@ function init() {
 
   const colorScale = d3.scaleOrdinal()
   .domain(["New York", "New Jersey", "Connecticut", "Pennsylvania", "Rhode Island", "Massachusetts"])
-  .range(["red", "blue", "green", "orange", "yellow", "black"]);
+  .range(["#FF0000", "#0000FF", "#00FF00", "#FFA500", "#FFFF00", "#000000"]);
 
 
   draw(); // calls the draw function
