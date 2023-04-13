@@ -4,104 +4,69 @@ const width = window.innerWidth * 0.8,
   margin = { top: 20, bottom: 50, left: 70, right: 20 },
   radius = 5;
 
-// // since we use our scales in multiple functions, they need global scope
-let xScale, yScale;
-
-/* APPLICATION STATE */
-let state = {
-  data: [],
-};
-
 /* LOAD DATA */
-d3.csv('housingUnit.csv', d3.autoType)
-   .then(raw_data => {
-console.log("raw_data", raw_data);
-  // save our data to application state
-  state.data = raw_data; 
-  init();
-});
-
-/* INITIALIZING FUNCTION */
-// this will be run *one time* when the data finishes loading in
-function init() {
-
+d3.csv("incomeHousing.csv").then(data => {
+  // Parse numeric columns]
+  data.forEach(d => {
+    d.year = +d.Year;
+    d.income = +d['Annual Median Household Income'];
+    d.downPayment = +d['Down Payment (20%)'];
+  });
   
-  console.log(state.data.map(d => d.state_name))
-  /* SCALES */
-  xScale = d3.scaleBand()
-  .domain(state.data.map(d => d.state_name))
-  .range([margin.left, width - margin.right])
-  .paddingInner(0.2 )
 
-  yScale = d3.scaleLinear()
-  .domain([0, d3.max(state.data, d => d.housing_unit)])
-  .range([height - margin.bottom, margin.top]);
-
-
-  draw(); // calls the draw function
-  console.log('svg', svg)
-}
-
-/* DRAW FUNCTION */
-// we call this every time there is an update to the data/state
-function draw() {
-  /* HTML ELEMENTS */
-
-  const colorScale = d3.scaleOrdinal()
-  .domain(["New York", "New Jersey", "Connecticut", "Pennsylvania", "Rhode Island", "Massachusetts"])
-  .range(["#FF0000", "#0000FF", "#00FF00", "#FFA500", "#FFFF00", "#000000"]);
-
-  //define svg
   const svg = d3.select("#container")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  //x and y axes being apended
-  
-  const xAxis = d3.axisBottom(xScale)
+  // Create scales
+  const xScale = d3.scaleBand()
+    .domain(data.map(d => d.year))
+    .range([0, width])
+    .padding(0.1);
+
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.income + d.downPayment)])
+    .range([height, 0]);
+
+  // Create and append axes
+  const xAxis = d3.axisBottom(xScale);
+  const yAxis = d3.axisLeft(yScale);
+
   svg.append("g")
-  .attr("transform", `translate(0,${height - margin.bottom})`)
-  .call(xAxis);
+    .attr("transform", `translate(0, ${height})`)
+    .call(xAxis)
+    .selectAll("text")
+    .attr("transform", "rotate(-45)")
+    .attr("dx", "-.8em")
+    .attr("dy", ".15em")
+    .style("text-anchor", "end");
 
-
-  const yAxis = d3.axisLeft(yScale)
   svg.append("g")
-    .attr("transform", `translate(${margin.left},0)`)
     .call(yAxis);
 
+  // Add bars for income
+  svg.selectAll(".income-bar")
+    .data(data)
+    .join("rect")
+    .attr("class", "income-bar")
+    .attr("x", d => xScale(d.year))
+    .attr("y", d => yScale(d.income))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => height - yScale(d.income))
+    .attr("fill", "blue");
 
-  svg.append("text")
-  .attr("class", "axis-label")
-  .attr("x", (width - margin.right - margin.left) / 2 + margin.left)
-  .attr("y", height - margin.bottom/2)
-  .attr("fill", "black")
-  .attr("text-anchor", "middle")
-  .text("State Name");
+  // Add bars for downpayment
+  svg.selectAll(".downpayment-bar")
+    .data(data)
+    .join("rect")
+    .attr("class", "downpayment-bar")
+    .attr("x", d => xScale(d.year))
+    .attr("y", d => yScale(d.income + d.downPayment))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => yScale(d.income) - yScale(d.income + d.downPayment))
+    .attr("fill", "orange");
 
-
-svg.append("text")
-  .attr("class", "axis-label")
-  .attr("x", -height/2)
-  .attr("y", margin.left/5)
-  .attr("transform", "rotate(-90)")
-  .attr("fill", "black")
-  .attr("text-anchor", "middle")
-  .text("Total Housing Units");
-
-
-  const rect = svg
-  .selectAll("rect.bar")
-  .data(state.data)
-  .join("rect")
-  .attr("class", "bar")
-  .attr("width",  xScale.bandwidth())
-  .attr("x", d => xScale(d.state_name))
-  .attr("y", d => yScale(d.housing_unit))
-  .attr("height",  d => height - margin.bottom -  yScale(d.housing_unit))
-  .attr("fill", d => colorScale(d.state_name))
-
-
-  console.log('svg from draw()', svg)
-
-}
+});
