@@ -52,6 +52,20 @@ function draw() {
   .attr("width", width)
   .attr("height", height)
 
+  //x and y axes being apended
+  
+  const xAxis = d3.axisBottom(xScale)
+  svg.append("g")
+  .attr("transform", `translate(0,${height - margin.bottom})`)
+  .call(xAxis);
+
+
+  const yAxis = d3.axisLeft(yScale)
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(yAxis);
+
+
   svg.append("text")
   .attr("class", "axis-label")
   .attr("x", width - margin.right)
