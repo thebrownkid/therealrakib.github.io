@@ -91,9 +91,8 @@ svg.append("text")
   .attr("class", "bar")
   .attr("width",  xScale.bandwidth())
   .attr("x", d => xScale(d.activity))
-  .attr("y", d => yScale(Math.max(0, d.count)))
-  .attr("height", d => height - yScale(Math.max(0, d.count)));
-
+  .attr("y", d => yScale(d.count))
+  .attr("height",  d => height - margin.bottom -  yScale(d.count))
 
   console.log('svg from draw()', svg)
 
