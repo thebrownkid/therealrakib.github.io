@@ -35,6 +35,10 @@ function init() {
   .domain([0, d3.max(state.data, d => d.housing_unit)])
   .range([height - margin.bottom, margin.top]);
 
+  const colorScale = d3.scaleOrdinal()
+  .domain(["New York", "New Jersey", "Connecticut", "Pennsylvania", "Rhode Island", "Massachusetts"])
+  .range(["red", "blue", "green", "orange", "yellow", "black"]);
+
 
   draw(); // calls the draw function
   console.log('svg', svg)
@@ -93,6 +97,8 @@ svg.append("text")
   .attr("x", d => xScale(d.state_name))
   .attr("y", d => yScale(d.housing_unit))
   .attr("height",  d => height - margin.bottom -  yScale(d.housing_unit))
+  .attr("fill", d => colorScale(d.state_name));
+
 
   console.log('svg from draw()', svg)
 
