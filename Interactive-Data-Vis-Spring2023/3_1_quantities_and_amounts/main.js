@@ -24,6 +24,8 @@ console.log("raw_data", raw_data);
 /* INITIALIZING FUNCTION */
 // this will be run *one time* when the data finishes loading in
 function init() {
+
+  
   console.log(state.data.map(d => d.state_name))
   /* SCALES */
   xScale = d3.scaleBand()
@@ -35,10 +37,6 @@ function init() {
   .domain([0, d3.max(state.data, d => d.housing_unit)])
   .range([height - margin.bottom, margin.top]);
 
-  const colorScale = d3.scaleOrdinal()
-  .domain(["New York", "New Jersey", "Connecticut", "Pennsylvania", "Rhode Island", "Massachusetts"])
-  .range(["#FF0000", "#0000FF", "#00FF00", "#FFA500", "#FFFF00", "#000000"]);
-
 
   draw(); // calls the draw function
   console.log('svg', svg)
@@ -48,7 +46,11 @@ function init() {
 // we call this every time there is an update to the data/state
 function draw() {
   /* HTML ELEMENTS */
- 
+
+  const colorScale = d3.scaleOrdinal()
+  .domain(["New York", "New Jersey", "Connecticut", "Pennsylvania", "Rhode Island", "Massachusetts"])
+  .range(["#FF0000", "#0000FF", "#00FF00", "#FFA500", "#FFFF00", "#000000"]);
+
   //define svg
   const svg = d3.select("#container")
   .append("svg")
@@ -97,7 +99,7 @@ svg.append("text")
   .attr("x", d => xScale(d.state_name))
   .attr("y", d => yScale(d.housing_unit))
   .attr("height",  d => height - margin.bottom -  yScale(d.housing_unit))
-  .attr("fill", d => colorScale(d.state_name));
+  .attr("fill", d => colorScale(d.state_name))
 
 
   console.log('svg from draw()', svg)
