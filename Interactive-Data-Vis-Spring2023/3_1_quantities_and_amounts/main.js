@@ -52,6 +52,24 @@ function draw() {
   .attr("width", width)
   .attr("height", height)
 
+  svg.append("text")
+  .attr("class", "axis-label")
+  .attr("x", width - margin.right)
+  .attr("y", height - margin.bottom/2)
+  .attr("fill", "black")
+  .attr("text-anchor", "middle")
+  .text("Activity");
+
+
+svg.append("text")
+  .attr("class", "axis-label")
+  .attr("x", -height/2)
+  .attr("y", margin.left/2)
+  .attr("transform", "rotate(-90)")
+  .attr("fill", "black")
+  .attr("text-anchor", "middle")
+  .text("Count");
+
 
   const rect = svg
   .selectAll("rect.bar")
