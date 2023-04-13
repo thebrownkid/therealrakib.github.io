@@ -21,14 +21,14 @@ d3.csv("incomeData.csv", d3.autoType)
   .range([margin.left,width-margin.right])
 
   //Democrats as blue. Republicans as Red.
-  const colorScale= d3.scaleSqrt()
+  const colorScale= d3.scaleOrdinal()
   .domain(["2", "1"])
   .range(["red", "blue"])
 
 
   //using ideologyScore2020 to dictate size of the dots
 
-  const differenceScale = d3.scaleLinear()
+  const differenceScale = d3.scaleSqrt()
   .domain([0,d3.max(data.map(d => d.difference))])
   .range([0,100])
   
