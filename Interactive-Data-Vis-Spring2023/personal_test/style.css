@@ -28,7 +28,7 @@ p {
   width: 50%; /* the idea is to center everything within 50% of the center of the page */
   text-align: center;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 #container { /* centering done for container as well */
