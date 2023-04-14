@@ -18,6 +18,13 @@ p {
   font-size: 1em;
 }
 
+.all-content-center {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .legend {
   display: flex;
   justify-content: center;
