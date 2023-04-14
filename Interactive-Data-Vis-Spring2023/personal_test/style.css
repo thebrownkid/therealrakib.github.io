@@ -34,6 +34,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: white; /* keepinf the background of the elements in the container white */
+  width: 90%;
 }
 
 
