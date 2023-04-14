@@ -1,7 +1,7 @@
 /* CONSTANTS AND GLOBALS */
 const width = document.querySelector('.all-content-center').clientWidth * 0.8; // this will help ensure bar chart is centered
       height = window.innerHeight * 0.5, //reduced height since it looked too long after centering
-      margin = { top: 20, bottom: 50, left: 70, right: 20 },
+      margin = { top: 50, bottom: 50, left: 70, right: 70 },
       radius = 5;
 
 /* LOAD DATA */
