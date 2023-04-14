@@ -1,5 +1,5 @@
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif; /* font updated to Roboto */
   font-size: 16px;
   padding: 1em;
   display: flex;
@@ -24,12 +24,13 @@ p {
 }
 
 .all-content-center {
-  width: 50%;
+  background-color: #FFFDD0; /* wanted to add some color to css */
+  width: 50%; /* the idea is to center everything within 50% of the center of the page */
   text-align: center;
 }
 
-#container {
-  display: flex;
+#container { /* centering done for container as well */
+  display: flex; 
   justify-content: center;
   align-items: center;
 }
