@@ -60,7 +60,7 @@ d3.csv("incomeHousing.csv").then(data => {
    svg.append("text")
   .attr("class", "axis-label")
   .attr("x", -height/2)
-  .attr("y", margin.left/200)
+  .attr("y", margin.left/200 - 4) // need to move dollars label more the left horizontally for visibility
   .attr("transform", "rotate(-90)")
   .attr("fill", "black")
   .attr("text-anchor", "middle")
