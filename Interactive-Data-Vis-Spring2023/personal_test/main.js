@@ -52,7 +52,7 @@ d3.csv("incomeHousing.csv").then(data => {
   svg.append("text")
   .attr("class", "axis-label")
   .attr("x", (width - margin.right - margin.left) / 2 + margin.left)
-  .attr("y", height - margin.bottom/2 + 20)
+  .attr("y", height - margin.bottom/2 + 50)
   .attr("fill", "black")
   .attr("text-anchor", "middle")
   .text("Year");
@@ -60,7 +60,7 @@ d3.csv("incomeHousing.csv").then(data => {
    svg.append("text")
   .attr("class", "axis-label")
   .attr("x", -height/2)
-  .attr("y", margin.left/200 - 20) // need to move dollars label more the left horizontally for visibility
+  .attr("y", margin.left/200 - 40) // need to move dollars label more the left horizontally for visibility
   .attr("transform", "rotate(-90)")
   .attr("fill", "black")
   .attr("text-anchor", "middle")
