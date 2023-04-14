@@ -1,6 +1,6 @@
 /* CONSTANTS AND GLOBALS */
 const width = document.querySelector('.all-content-center').clientWidth * 0.8;
-      height = window.innerHeight * 0.8,
+      height = window.innerHeight * 0.5,
       margin = { top: 20, bottom: 50, left: 70, right: 20 },
       radius = 5;
 
