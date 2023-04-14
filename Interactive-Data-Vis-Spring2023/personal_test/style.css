@@ -33,8 +33,7 @@ p {
   display: flex; 
   justify-content: center;
   align-items: center;
-  background-color: white; /* keepinf the background of the elements in the container white with a little added padding */
-  padding: 1em;
+  background-color: white; /* keepinf the background of the elements in the container white */
 }
 
 
