@@ -107,7 +107,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .style("opacity", 0)
     d3.select(this)
       .style("stroke", "none")
-      .style("opacity", 0.8)
+      .style("opacity", 0.7)
   }
 
   // Add bars for income
@@ -120,7 +120,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.income))
     .attr("fill", "blue")
-    .style("opacity", 0.9) // initial opacity for income
+    .style("opacity", 0.7) // opacity for income
     .on("mouseover", mouseover) //event listener for mouseover
     .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
     .on("mouseleave", mouseleave); //event listener for mouseleave
