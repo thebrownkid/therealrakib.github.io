@@ -102,12 +102,12 @@ d3.csv("incomeHousing.csv").then(data => {
   }
   
   
-  function mouseleave() {
+  function mouseleave(firstOpacity) {
     tooltip
     .style("opacity", 0)
     d3.select(this)
       .style("stroke", "none")
-      .style("opacity", 0.8)
+      .style("opacity", firstOpacity) //using this so opacity can return to original value
   }
 
   // Add bars for income
@@ -123,7 +123,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .style("opacity", 0.9) // initial opacity for income
     .on("mouseover", mouseover) //event listener for mouseover
     .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
-    .on("mouseleave", mouseleave); //event listener for mouseleave
+    .on("mouseleave", mouseleave(0.9)); //event listener for mouseleave
 
   // Add bars for downpayment
   svg.selectAll(".downpayment-bar")
@@ -138,5 +138,5 @@ d3.csv("incomeHousing.csv").then(data => {
     .style("opacity", 0.7) // 70% opacity can help improve understanding a bit
     .on("mouseover", mouseover) //event listener for mouseover
     .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
-    .on("mouseleave", mouseleave); //event listener for mouseleave
+    .on("mouseleave", mouseleave(0.7)); //event listener for mouseleave
 });
