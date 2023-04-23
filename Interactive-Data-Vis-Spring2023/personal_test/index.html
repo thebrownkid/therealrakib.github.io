@@ -27,10 +27,12 @@
     <p>One of the most fundamental methodologies to track homeownership affordability is to see how household income has changed relative to home prices.</p>
     <p>However, the home sales price is a much higher number when compared to income. Additionally, most home buyers traditionally use a loan instead of buying outright. Hence, the better comparison would be between the median annual income and the median down payment (calculates as 20% of the home sales price – the standardized down payment percentage used by lenders and realtors).</p>
 
-    
+    <p>Want to do the analysis yourself?<a href="incomeHousing.csv">Access the .csv file for the data used</a></p>
+
     <div id="container"> </div>
     <script src="main.js"></script>
     
+   
 <div class="legend">
   <div class="legend-item">
     <div class="legend-color" style="background-color: blue;"></div>
@@ -45,13 +47,43 @@
 
 <br>
 
-<h2>Mortgage Eligibility</h2>
+<p>What is evident here is that affordability does decrease over time as the down payment overtakes income over time and is growing at a faster rate.</p>
+<p>The first time this was recorded in history is in 2004 and then again things momentarily get better for a few years after the 2007-2008 financial crisis. The years leading up to the financial crisis saw housing prices increasing faster than the norm (a bubble that would eventually burst). Since getting a subprime mortgage was easy, the increased home buying demand drove housing prices up fast but just as fast as it happened, it soon tanked after the great recession.</p>
+<p>2021 again registered a huge jump when mortgage rates reached a record low making home buying prospects better while at the same time, thanks to the various economic stimuli, people had more income in hand. This drove demand for housing high and since supply is limited, housing prices soared.</p>
+
+<h2><u>Mortgage Eligibility</u></h2>
     <p>While being able to afford the down payment is after all the most important component of the home-buying process, what is also the next important step is to see if somebody will actually qualify for the mortgage itself.</p>
     <p>This is a trickier question as a lot of factors do come into play including credit score, lending history, overall debt, etc. But since we are on the topic of affordability as an income topic, the single most important factor that lenders use for mortgage qualification is to check the monthly mortgage payment to income ratio.</p>
-    <p></p>
+    <p>Lenders in the United States commonly use the 28% rule where a person will qualify for a mortgage, provided again that all other conditions are met, only when their monthly mortgage payment will not exceed 28% of their monthly income.</p>
+    <p>Now to visualize this, I had already gathered the median income data so it would not be difficult to calculate the median 28% of monthly income.</p>
+    <p>However, the monthly mortgage payment is a little trickier to calculate. Now some of the information was already available. I knew the median home sale price, and that a 20% down payment was to be made and considered the standard 30-year loan that most buyers use. The remaining data that was necessary was the average mortgage rate for a particular year which helps determine the monthly payment. </p>   
+    <p>Thankfully Excel has a very useful function called the PMT function which helps determine the monthly mortgage payment quite easily once all other data was available. </p>
+    <p>You can earn more about PMT function at this <a href="https://support.microsoft.com/en-us/office/pmt-function-0214da64-9a63-4996-bc20-214433fa6441">Micrososft 365 Support Page</a>.</p>
+    
+    <p>Want to do the analysis yourself?<a href="mortgageVSincome.csv">Access the .csv file for the data used</a></p>
 
-    <div id="mortgage-income-chart-container"></div>
-    <script src="mortgageincome.js"></script>
+    <div id="second-container"></div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: blue;"></div>
+        <span>Monthly Mortgage Payment</span>
+      </div>
+    
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: red;"></div>
+        <span>28% of Monthly Income</span>
+      </div>
+    </div>
+
+    <br>
+
+    <p>The affordability story is reversed when it comes to mortgage eligibility. Provided that you had the down payment ready and met credit and debt factors, it became easier to qualify for a mortgage over the years. This can be seen from the bar chart of 28% monthly income and average mortgage payment over the years.</p>
+    <p>It first became easy to qualify in 1993 and then things again momentarily became unaffordable before the financial crisis owing to an increase in both home sales prices and mortgage rates during those years.</p>
+<p><em>*Although the data for 2022 is not available here, given the meteoric rise in interest rates while income did not, mortgage eligibility again became more difficult but it is getting better over time.</em></p>
+
+<div id="third-container"></div>
+
 
 
 </div>

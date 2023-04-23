@@ -32,7 +32,7 @@ d3.csv("mortgageVSincome.csv").then(data => {
     d.monthlyIncome28 = +d['28% of Monthly Income'];
   });
 
-  const svg = d3.select("#mortgage-income-chart-container")
+  const svg = d3.select("#second-container")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
