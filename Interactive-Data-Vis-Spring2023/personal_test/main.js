@@ -94,12 +94,13 @@ d3.csv("incomeHousing.csv").then(data => {
     .style("opacity", 1);
   }
   
-  function mousemove(d) {
+  function mousemove(event, d) {
     tooltip
       .html(`Year: ${d.year}<br>Income: ${d.income}<br>Down Payment: ${d.downPayment}`)
-      .style("left", d3.event.pageX + 15 + "px")
-      .style("top", d3.event.pageY - 28 + "px");
+      .style("left", event.pageX + 15 + "px")
+      .style("top", event.pageY - 28 + "px");
   }
+  
   
   function mouseleave() {
     tooltip
@@ -121,7 +122,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("fill", "blue")
     .style("opacity", 0.9) // initial opacity for income
     .on("mouseover", mouseover) //event listener for mouseover
-    .on("mousemove", mousemove) //event listener for mousemove
+    .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
     .on("mouseleave", mouseleave); //event listener for mouseleave
 
   // Add bars for downpayment
@@ -136,6 +137,6 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("fill", "red")
     .style("opacity", 0.7) // 70% opacity can help improve understanding a bit
     .on("mouseover", mouseover) //event listener for mouseover
-    .on("mousemove", mousemove) //event listener for mousemove
+    .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
     .on("mouseleave", mouseleave); //event listener for mouseleave
 });
