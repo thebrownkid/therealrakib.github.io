@@ -1,8 +1,8 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * 0.8,
-  height = window.innerHeight * 0.8,
-  margin = { top: 20, bottom: 50, left: 70, right: 20 },
-  radius = 5;
+const width = document.querySelector('.all-content-center').clientWidth * 0.8; // this will help ensure bar chart is centered
+      height = window.innerHeight * 0.5, //reduced height since it looked too long after centering
+      margin = { top: 50, bottom: 50, left: 70, right: 70 },
+      radius = 5;
 
 /* LOAD DATA */
 d3.csv("incomeHousing.csv").then(data => {
@@ -24,10 +24,10 @@ d3.csv("incomeHousing.csv").then(data => {
   const xScale = d3.scaleBand()
     .domain(data.map(d => d.year))
     .range([0, width])
-    .padding(0.2);
+    .padding(0.1);
 
   const yScale = d3.scaleLinear()
-    .domain([0, d3.max(data, d => Math.max(d.income, d.downPayment))])
+    .domain([0, d3.max(data, d => d.income)])
     .range([height, 0]);
 
   // Create and append axes
@@ -46,6 +46,26 @@ d3.csv("incomeHousing.csv").then(data => {
   svg.append("g")
     .call(yAxis);
 
+
+    //adding labels to the axes
+
+  svg.append("text")
+  .attr("class", "axis-label")
+  .attr("x", (width - margin.right - margin.left) / 2 + margin.left)
+  .attr("y", height - margin.bottom/2 + 70) // need to move year label down for visibility
+  .attr("fill", "black")
+  .attr("text-anchor", "middle")
+  .text("Year");
+
+   svg.append("text")
+  .attr("class", "axis-label")
+  .attr("x", -height/2)
+  .attr("y", margin.left/200 - 45) // need to move dollars label left for visibility
+  .attr("transform", "rotate(-90)")
+  .attr("fill", "black")
+  .attr("text-anchor", "middle")
+  .text("Dollars ($)");
+
   // Add bars for income
   svg.selectAll(".income-bar")
     .data(data)
@@ -53,7 +73,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("class", "income-bar")
     .attr("x", d => xScale(d.year))
     .attr("y", d => yScale(d.income))
-    .attr("width", xScale.bandwidth() / 2)
+    .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.income))
     .attr("fill", "blue");
 
@@ -62,10 +82,10 @@ d3.csv("incomeHousing.csv").then(data => {
     .data(data)
     .join("rect")
     .attr("class", "downpayment-bar")
-    .attr("x", d => xScale(d.year) + xScale.bandwidth() / 2)
+    .attr("x", d => xScale(d.year))
     .attr("y", d => yScale(d.downPayment))
-    .attr("width", xScale.bandwidth() / 2)
+    .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.downPayment))
-    .attr("fill", "orange");
-
+    .attr("fill", "red")
+    .attr("fill-opacity", 0.7); // 70% opacity can help improve understanding a bit
 });
