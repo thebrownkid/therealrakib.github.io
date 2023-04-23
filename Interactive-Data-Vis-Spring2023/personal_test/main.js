@@ -96,7 +96,7 @@ d3.csv("incomeHousing.csv").then(data => {
   
   function mousemove(event, d) {
     tooltip
-      .html(`Year: ${d.year}<br>Income: ${d.income}<br>Down Payment: ${d.downPayment}`)
+      .html(`Year: ${d.year}<br>Income: $ ${d.income}<br>Down Payment: $${d.downPayment}`)
       .style("left", event.pageX + 15 + "px")
       .style("top", event.pageY - 28 + "px");
   }
