@@ -6,7 +6,6 @@ const width = document.querySelector('.all-content-center').clientWidth * 0.8; /
 
 /* LOAD DATA */
 d3.csv("incomeHousing.csv").then(data => {
-  // Parse numeric columns
   data.forEach(d => {
     d.year = +d.Year;
     d.income = +d['Annual Median Household Income'];
@@ -47,7 +46,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .call(yAxis);
 
 
-    //adding labels to the axes
+  //adding labels to the axes
 
   svg.append("text")
   .attr("class", "axis-label")

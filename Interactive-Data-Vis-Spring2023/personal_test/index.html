@@ -10,25 +10,25 @@
     <title>Annual Household Income vs Median Down Payment (20% of Median Home Price)</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="./style.css">
+    <script src="../lib/d3.js"></script>
   </head>
   <body>
 
     <div class="all-content-center">
 
-    <h3>Declining Home Ownership Affordability in the United States</h3>
+    <h3><u>Declining Home Ownership Affordability in the United States</u></h3>
 
-    <p>Being able to buy a home is one of the biggest aspirations for most people in the United States. In fact, according to a survey conducted by NerdWallet, “an overwhelming majority of Americans (91%) would like to own at least one home in their lifetime”.</p>
+    <p>Being able to buy a home is one of the biggest aspirations for most people in the United States. In fact, according to a <a href="https://www.nerdwallet.com/article/mortgages/2018-home-buyer-report#:~:text=Homebuying%20concerns,have%20concerns%20about%20purchasing%20one.">survey conducted by NerdWallet</a>, “an overwhelming majority of Americans (91%) would like to own at least one home in their lifetime”.</p>
     <p>However, concerns have been rising for a good number of years now about the decreasing affordability of the market compared to income growth.</p>
-    <p> Personally, I have also come across this concern 
-    <p>Having worked as a strategy consultant for political campaigns, I have come across several constituent surveys where homeownership affordability was a common issue.</p>
+    <p>During the past two years, having worked as a strategy consultant for political campaigns, I have come across several constituent surveys where homeownership affordability was a common issue.</p>
     <p>That and my personal interest in homeownership created a natural curiosity to see how affordability has changed.</p>
     
-    <h5>Income vs Down Payment</h5>
+    <h2><u>Income vs Down Payment</u></h2>
     <p>One of the most fundamental methodologies to track homeownership affordability is to see how household income has changed relative to home prices.</p>
     <p>However, the home sales price is a much higher number when compared to income. Additionally, most home buyers traditionally use a loan instead of buying outright. Hence, the better comparison would be between the median annual income and the median down payment (calculates as 20% of the home sales price – the standardized down payment percentage used by lenders and realtors).</p>
 
+    
     <div id="container"> </div>
-    <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
     
 <div class="legend">
@@ -42,6 +42,17 @@
     <span>Down Payment (20%)</span>
   </div>
 </div>
+
+<br>
+
+<h2>Mortgage Eligibility</h2>
+    <p>While being able to afford the down payment is after all the most important component of the home-buying process, what is also the next important step is to see if somebody will actually qualify for the mortgage itself.</p>
+    <p>This is a trickier question as a lot of factors do come into play including credit score, lending history, overall debt, etc. But since we are on the topic of affordability as an income topic, the single most important factor that lenders use for mortgage qualification is to check the monthly mortgage payment to income ratio.</p>
+    <p></p>
+
+    <div id="mortgage-income-chart-container"></div>
+    <script src="mortgageincome.js"></script>
+
 
 </div>
 

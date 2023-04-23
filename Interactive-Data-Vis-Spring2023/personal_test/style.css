@@ -5,7 +5,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 0;
 }
 
@@ -24,14 +23,14 @@ p {
 }
 
 .all-content-center {
-  background-color: #FFFDD0; /* wanted to add some color to css */
+  background-color: #fffcdd; /* wanted to add some color to css */
   width: 50%; /* the idea is to center everything within 50% of the center of the page */
   text-align: center;
   display: flex;
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-  overflow-y: scroll; /* idea from https://www.w3schools.com/cssref/css3_pr_overflow-y.php */
+  padding: 20px;
 }
 
 #container { /* centering done for container as well */
@@ -39,7 +38,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: white; /* keeping the background of the elements in the container white */
-  width: 90%;
+  width: 97%;
 }
 
 
@@ -60,4 +59,13 @@ p {
   width: 20px;
   height: 20px;
   margin-right: 5px;
+}
+
+#mortgage-income-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
 }
