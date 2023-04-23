@@ -86,7 +86,7 @@ d3.csv("incomeHousing.csv").then(data => {
   .text("Dollars ($)");
 
   // Tooltip mouse functions (mouseover, mouse move and mouseleave)
-  function mouseover(d) {
+  function mouseover() {
     tooltip
     .style("opacity", 1);
     d3.select(this)
@@ -101,14 +101,13 @@ d3.csv("incomeHousing.csv").then(data => {
       .style("top", d3.event.pageY - 28 + "px");
   }
   
-  function mouseleave(d) {
+  function mouseleave() {
     tooltip
-    .style("opacity", 0);
+    .style("opacity", 0)
     d3.select(this)
-    .style("stroke", "none")
-    .style("opacity", 0.8);
+      .style("stroke", "none")
+      .style("opacity", 0.8)
   }
-  
 
   // Add bars for income
   svg.selectAll(".income-bar")
