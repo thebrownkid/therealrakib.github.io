@@ -31,14 +31,14 @@ p {
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-
+  overflow-y: scroll; /* idea from https://www.w3schools.com/cssref/css3_pr_overflow-y.php */
 }
 
 #container { /* centering done for container as well */
   display: flex; 
   justify-content: center;
   align-items: center;
-  background-color: white; /* keepinf the background of the elements in the container white */
+  background-color: white; /* keeping the background of the elements in the container white */
   width: 90%;
 }
 
