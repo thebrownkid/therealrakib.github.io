@@ -119,6 +119,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.income))
     .attr("fill", "blue")
+    .style("opacity", 0.9) // initial opacity for income
     .on("mouseover", mouseover) //event listener for mouseover
     .on("mousemove", mousemove) //event listener for mousemove
     .on("mouseleave", mouseleave); //event listener for mouseleave
@@ -133,7 +134,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .attr("width", xScale.bandwidth())
     .attr("height", d => height - yScale(d.downPayment))
     .attr("fill", "red")
-    .attr("fill-opacity", 0.7) // 70% opacity can help improve understanding a bit
+    .style("opacity", 0.7) // 70% opacity can help improve understanding a bit
     .on("mouseover", mouseover) //event listener for mouseover
     .on("mousemove", mousemove) //event listener for mousemove
     .on("mouseleave", mouseleave); //event listener for mouseleave
