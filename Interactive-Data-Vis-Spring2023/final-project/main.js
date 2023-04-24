@@ -163,17 +163,16 @@ radius = 5;
 // https://gist.github.com/d3noob/a22c42db65eb00d4e369
 
 const tooltip = d3.select("body")
-  .append("div")
-  .attr("id", "tooltip")
-  .attr("class", "tooltip")
-  .style("position", "absolute")
-  .style("background-color", "white")
-  .style("border", "solid 1px black")
-  .style("border-radius", "5px")
-  .style("padding", "5px")
-  .style("pointer-events", "none")
-  .style("opacity", 0)
-  .style("transition", "opacity 0.2s ease-in-out");
+.append("div")
+.attr("id", "tooltip")
+.attr("class", "tooltip")
+.style("position", "absolute") //tooltip would not show then I searched on Google for similar issues and got the idea here: https://stackoverflow.com/questions/67887686/tooltip-not-showing-only-on-hover
+.style("background-color", "white")
+.style("border", "solid 1px black")
+.style("border-radius", "5px") //border radius make it round which I like
+.style("padding", "5px") //padding added to make text more readable within tooltip
+.style("opacity", 0) //setting initial opacty to 0
+.style("transition", "opacity 0.2s ease-in-out"); //a little transition looks nice
 
 
 /* LOAD DATA */
@@ -336,7 +335,10 @@ d3.csv('incomebyPercentile.csv', d => {
   .attr("height", height)
 
 
-  const tooltip = d3.select("body").append("div")
+
+  
+  const tooltip = d3.select("body")
+  .append("div")
   .attr("class", "tooltip")
   .style("opacity", 0)
   .style("position", "absolute")
@@ -344,7 +346,7 @@ d3.csv('incomebyPercentile.csv', d => {
   .style("background-color", "white")
   .style("border", "1px solid black")
   .style("border-radius", "5px")
-  .style("pointer-events", "none")
+  .style("pointer-events", "none") //without this tooltip sometimes doesnt show. I asked a friend for suggestion and he suggested using this which worked
   .style("font-size", "12px")
   .style("z-index", 999);
 
