@@ -8,7 +8,7 @@ const width = document.querySelector('.all-content-center').clientWidth * 0.8; /
 
 // Tooltip being added
 // I searched on Google and went through following tutorial sites (I went through some others but mainly these) to come to the code I used:
-// https://d3-graph-gallery.com/graph/interactivity_tooltip.html
+// https://d3-graph-gallery.com/graph/interactivity_tooltip.html (this is primarily where I learnt to use the tooltip)
 // https://chartio.com/resources/tutorials/how-to-show-data-on-mouseover-in-d3js/
 // https://gist.github.com/d3noob/a22c42db65eb00d4e369
 
@@ -16,14 +16,13 @@ const width = document.querySelector('.all-content-center').clientWidth * 0.8; /
         .append("div")
         .attr("id", "tooltip")
         .attr("class", "tooltip")
-        .style("position", "absolute")
+        .style("position", "absolute") //tooltip would not show then I searched on Google for similar issues and got the idea here: https://stackoverflow.com/questions/67887686/tooltip-not-showing-only-on-hover
         .style("background-color", "white")
         .style("border", "solid 1px black")
-        .style("border-radius", "5px")
-        .style("padding", "5px")
-        .style("pointer-events", "none")
-        .style("opacity", 0)
-        .style("transition", "opacity 0.2s ease-in-out");
+        .style("border-radius", "5px") //border radius make it round which I like
+        .style("padding", "5px") //padding added to make text more readable within tooltip
+        .style("opacity", 0) //setting initial opacty to 0
+        .style("transition", "opacity 0.2s ease-in-out"); //a little transition looks nice
       
 
 /* LOAD DATA */
@@ -90,15 +89,15 @@ d3.csv("incomeHousing.csv").then(data => {
   // Tooltip mouse functions (mouseover, mouse move and mouseleave)
   function mouseover() {
     tooltip
-    .style("opacity", 1);
-    d3.select(this)
-    .style("stroke", "black")
+    .style("opacity", 1); //calls in tooltip when mouseover is triggered
+    d3.select(this) //this will make the bars change opacity and add a stroke
+    .style("stroke", "black")// this helps create an animation type effect that helps see which bar you are viewing
     .style("opacity", 1);
   }
   
-  function mousemove(event, d) {
+  function mousemove(event, d) { //mousemove does this cool thing where the tooltip follows you as you are moving the mouse on the bars
     tooltip
-      .html(`Year: ${d.year}<br>Income: $${d.income}<br>Down Payment: $${d.downPayment}`)
+      .html(`Year: ${d.year}<br>Income: $${d.income}<br>Down Payment: $${d.downPayment}`) //information that will show when hovering over a bar
       .style("left", event.pageX + 15 + "px")
       .style("top", event.pageY - 28 + "px");
   }
@@ -106,7 +105,7 @@ d3.csv("incomeHousing.csv").then(data => {
   
   function mouseleave() {
     tooltip
-    .style("opacity", 0)
+    .style("opacity", 0)  //takes out tooltip when mouseleave is triggered
     d3.select(this)
       .style("stroke", "none")
       .style("opacity", 0.7)
@@ -386,32 +385,30 @@ d3.csv('incomebyPercentile.csv', d => {
 
     function mouseover(event, d) {
       tooltip
-        .style("opacity", 1);
-      tooltip
-        .html("Year: " + d.year.getFullYear() + "<br/>" +
-                    "Median: $" + d.median.toLocaleString() + "<br/>" +
-                    "Top 10%: $" + d.top10.toLocaleString() + "<br/>" +
-                    "Top 5%: $" + d.top5.toLocaleString() + "<br/>" +
-                    "Top 1%: $" + d.top1.toLocaleString())
-        .style("left", (event.pageX + 10) + "px")
-        .style("top", (event.pageY - 28) + "px");
-        d3.select(this)
-    .style("stroke", "black")
-    .style("opacity", 0.2);
+        .style("opacity", 1)
+      
+      d3.select(this)
+        .style("stroke", "black")
+        .style("opacity", 0.2);
     }
     
     function mousemove(event, d) {
       tooltip
+        .html("Year: " + d.year.getFullYear() + "<br/>" +
+          "Median: $" + d.median.toLocaleString() + "<br/>" +
+          "Top 10%: $" + d.top10.toLocaleString() + "<br/>" +
+          "Top 5%: $" + d.top5.toLocaleString() + "<br/>" +
+          "Top 1%: $" + d.top1.toLocaleString())
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 28) + "px");
     }
     
     function mouseleave(d) {
       tooltip
-        .style("opacity", 0);
+          .style("opacity", 0);
         d3.select(this)
-        .style("stroke", "none")
-        .style("opacity", 1)
+          .style("stroke", "none")
+          .style("opacity", 1)
     }
 
   // LINE GENERATOR FUNCTION
