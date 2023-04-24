@@ -395,6 +395,9 @@ d3.csv('incomebyPercentile.csv', d => {
                     "Top 1%: $" + d.top1.toLocaleString())
         .style("left", (event.pageX + 10) + "px")
         .style("top", (event.pageY - 28) + "px");
+        d3.select(this)
+    .style("stroke", "black")
+    .style("opacity", 0.2);
     }
     
     function mousemove(event, d) {
@@ -406,6 +409,9 @@ d3.csv('incomebyPercentile.csv', d => {
     function mouseleave(d) {
       tooltip
         .style("opacity", 0);
+        d3.select(this)
+        .style("stroke", "none")
+        .style("opacity", 1)
     }
 
   // LINE GENERATOR FUNCTION
