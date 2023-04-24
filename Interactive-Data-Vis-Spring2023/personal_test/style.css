@@ -15,11 +15,23 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+  background-image: url('images/pattern-01.jpg');
+  background-size: 100%;
+}
+
+.title {
+  background-color: maroon;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   margin: 0.25em 0;
+  font-weight: bold;
+
 }
 
 h3 {
@@ -49,7 +61,6 @@ p {
   background-color: white; /* keeping the background of the elements in the container white */
   width: 97%;
 }
-
 
 .legend {
   display: flex;
@@ -88,4 +99,14 @@ p {
   margin-top: 20px;
 }
 
+ /* adding hover effects to links: */
 
+a {
+  color: blue;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: red;
+}
