@@ -328,6 +328,7 @@ d3.csv('incomebyPercentile.csv', d => {
   const xScale = d3.scaleTime()
   .domain(d3.extent(data, d => d.year))
   .range([margin.left, width - margin.right]);
+  
 
   // CREATE SVG ELEMENT
   const svg = d3.select("#third-container")

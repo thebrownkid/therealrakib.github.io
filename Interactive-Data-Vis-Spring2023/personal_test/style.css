@@ -1,3 +1,12 @@
+ /* Reference: */
+  /* I used seeveral sources to help with understanding CSS syntax and coming up with ideas.
+  I mostly just searched on Google for what I tried to do and went through websites to test code that worked for me.
+  Here are two of the sites I used most::after
+  W3 Schools
+  https://developer.mozilla.org/en-US/docs/Web/CSS
+  https://www.w3schools.com/css/default.asp
+  */
+
 body {
   font-family: "Roboto", sans-serif; /* font updated to Roboto */
   font-size: 16px;
