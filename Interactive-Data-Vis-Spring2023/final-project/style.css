@@ -7,6 +7,15 @@
   https://www.w3schools.com/css/default.asp
   */
 
+
+  /* I used flexbox here soemthing I came across while trying
+  to search on Google for how to use CSS to align everything
+  nice and centered
+  To learn more about it::after
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+  */
+
+
 body {
   font-family: "Roboto", sans-serif; /* font updated to Roboto */
   font-size: 16px;
@@ -50,10 +59,10 @@ p {
 
 .all-content-center {
   background-color: #ffffff; /* wanted to add some color to css */
-  width: 50%; /* the idea is to center everything within 50% of the center of the page */
+  width: 50%; /* the idea is to center everything within the center of the page */
   text-align: center;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column; /* this defines whether the flex display is horizontal or vertical. changing to row would make everything fit vertically*/
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -70,21 +79,18 @@ p {
 
 .legend {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 20px;
 }
 
-.legend-item {
+.legend-item { 
   display: flex;
-  align-items: center;
-  margin-right: 20px;
+  margin-right: 20px; /* how much space we want between two items on the legend */
 }
 
-.legend-color {
+.legend-color { /* creating a 20px x 20px colored box */
   width: 20px;
   height: 20px;
-  margin-right: 5px;
+  margin-right: 5px; /* leaving a little space between colored box and text of legend */
 }
 
 #second-container {
@@ -97,6 +103,15 @@ p {
 }
 
 #third-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
+}
+
+#fourth-container {
   display: flex;
   justify-content: center;
   align-items: center;
