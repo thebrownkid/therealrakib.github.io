@@ -138,7 +138,11 @@ d3.csv("incomeHousing.csv").then(data => {
   .append("tspan") // source: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
   .attr("x", xScale(2004))
   .attr("dy", "1.2em")
-  .text("momentarily made things better again");
+  .text("momentarily made things better again")
+  .style("background-color", "white")
+  .style("border", "solid 1px black")
+  .style("border-radius", "5px")
+  .style("padding", "5px");;
 
   d3.select(".callout-text")
   .style("background-color", "white")
