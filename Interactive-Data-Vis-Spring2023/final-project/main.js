@@ -147,7 +147,7 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("class", "callout-line-2005")
   .attr("x1", xScale(2005))
   .attr("y1", yScale(46326))
-  .attr("x2", xScale(2005) - 80)
+  .attr("x2", xScale(1999))
   .attr("y2", yScale(50000))
   .attr("stroke", "black")
   .attr("stroke-width", 1);
