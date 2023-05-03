@@ -120,6 +120,15 @@ p {
   margin-top: 20px;
 }
 
+#fifth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
+}
+
  /* adding hover effects to links: */
 
 a {
