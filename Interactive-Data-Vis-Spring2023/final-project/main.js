@@ -426,7 +426,7 @@ const tooltip = d3.select("body")
 /* LOAD DATA */
 d3.csv("mortgageVSincome-controlled-copy.csv").then(data => {
 data.forEach(d => {
-d.year = +d.Year;
+d.year: new Date(+d.Year, 0, 1),
 d.monthlyMortgage = +d['Monthly Mortgage Payment']; 
 d.monthlyIncome28median = +d['28% of Monthly Income - Median'];
 d.monthlyIncome28minimum = +d['28% of Monthly Income - Minimum Wage'];
@@ -443,9 +443,9 @@ const svg = d3.select("#third-container")
 .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Create scales
-const xScale = d3.scaleLinear()
-.domain(d3.extent(data, d => d.year))
-.range([0, width]);
+const xScale = d3.scaleTime()
+  .domain(d3.extent(data, d => d.year))
+  .range([0, width]);
 
 const yScale = d3.scaleLinear()
 .domain([0, d3.max(data, d => Math.max(d.monthlyMortgage, d.monthlyIncome28median, d.monthlyIncome28minimum, d.monthlyIncome28top1 ))])
