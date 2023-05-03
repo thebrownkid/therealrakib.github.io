@@ -683,12 +683,7 @@ const lineGenAsian = d3.line()
 
 
   // DRAW LINE
-  svg.append("path")
-  .datum(data)
-  .attr("d", lineGenAnnualMedianIncome)
-  .attr("class", "line")
-  .attr("fill", "none")
-  .attr("stroke", "black");
+
 
 svg.append("path")
   .datum(data)
@@ -719,19 +714,6 @@ svg.append("path")
   .attr("stroke", "orange");  
 
   //create circles
-
-  svg.selectAll(".dot")
-  .data(data)
-  .enter().append("circle")
-  .attr("class", "dot")
-  .attr("cx", d => xScale(d.year))
-  .attr("cy", d => yScale(d.annualMedianIncome))
-  .attr("r", 4)
-  .attr("stroke", "black")
-  .attr("fill", "black")
-  .on("mouseover", mouseover)
-  .on("mousemove", mousemove)
-  .on("mouseleave", mouseleave);
 
 svg.selectAll(".circle-white")
   .data(data)
