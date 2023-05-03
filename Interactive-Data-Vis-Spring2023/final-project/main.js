@@ -664,7 +664,6 @@ svg.selectAll(".income28-bar")
 .attr("height", d => height - yScale(d.downPayment)) 
 .attr("fill", "blue")
 .style("opacity", 0.3) // 70% opacity can help improve understanding a bit
-});
 
 // LINE GENERATOR FUNCTION
 
@@ -785,7 +784,7 @@ svg.selectAll(".circle-white")
 // ALSO ADDING CALLOUTS TO SPECIAL YEARS / EVENTS
 
 
-
+});
 }
 
 
