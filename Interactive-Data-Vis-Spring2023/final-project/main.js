@@ -135,6 +135,7 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("font-size", "12px")
   .text("The 2007-2008 Financial Crisis")
   .append("tspan") // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
+  .attr("x", xScale(2007) + 55)
   .attr("dy", "1.2em")
   .text("momentarily made things better again");
 
