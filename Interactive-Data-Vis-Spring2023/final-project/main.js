@@ -123,7 +123,7 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("class", "callout-line")
   .attr("x1", xScale(2007))
   .attr("y1", yScale(50233))
-  .attr("x2", xScale(2007) - 50)
+  .attr("x2", xScale(2007))
   .attr("y2", yScale(60000))
   .attr("stroke", "black")
   .attr("stroke-width", 1);
@@ -131,13 +131,13 @@ d3.csv("incomeHousing.csv").then(data => {
   //adding the actual text for the callout
   svg.append("text")
   .attr("class", "callout-text")
-  .attr("x", xScale(2004))
+  .attr("x", xScale(2007))
   .attr("y", yScale(60000) - 35)
   .attr("text-anchor", "middle")
   .attr("font-size", "12px")
   .text("The 2007-2008 Financial Crisis")
   .append("tspan") // source: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
-  .attr("x", xScale(2004))
+  .attr("x", xScale(2007))
   .attr("dy", "1.2em")
   .text("momentarily made things better");
 
