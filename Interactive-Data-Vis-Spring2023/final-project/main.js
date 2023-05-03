@@ -129,13 +129,13 @@ d3.csv("incomeHousing.csv").then(data => {
 
   svg.append("text")
   .attr("class", "callout-text")
-  .attr("x", xScale(2007) + 55)
+  .attr("x", xScale(1999))
   .attr("y", yScale(60000) - 35)
   .attr("text-anchor", "middle")
   .attr("font-size", "12px")
   .text("The 2007-2008 Financial Crisis")
   .append("tspan") // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
-  .attr("x", xScale(2007) + 55)
+  .attr("x", xScale(1999))
   .attr("dy", "1.2em")
   .text("momentarily made things better again");
 
