@@ -127,6 +127,14 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("stroke", "black")
   .attr("stroke-width", 1);
 
+  svg.append("text")
+  .attr("class", "callout-text")
+  .attr("x", xScale(2007) + 55)
+  .attr("y", yScale(5300) - 35)
+  .attr("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .text("The 2007-2008 Financial Crisis <br> momentarily made things better again");
+
 
   // Add bars for income
   svg.selectAll(".income-bar")
