@@ -811,7 +811,6 @@ svg.selectAll(".circle-white")
   .on("mouseleave", mouseleave);
 // CAN ADD BARS (REDUCED OPACITY FOR DOWNPAYMENT AT THE BACK FOR COMPARISON)
 // ALSO ADDING CALLOUTS TO SPECIAL YEARS / EVENTS
-});
 
 
 svg.selectAll(".income28-bar")
@@ -827,6 +826,7 @@ svg.selectAll(".income28-bar")
 .on("mouseover", mouseover) //event listener for mouseover
 .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
 .on("mouseleave", mouseleave); //event listener for mouseleave
+});
 
 
 }
