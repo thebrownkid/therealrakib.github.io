@@ -117,6 +117,7 @@ d3.csv("incomeHousing.csv").then(data => {
       .style("opacity", 0.7)
   }
 
+  //callout for 2007-2008 financial crisis
   //adding line for a callout I want to add
   svg.append("line")
   .attr("class", "callout-line")
@@ -139,6 +140,17 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("x", xScale(2004))
   .attr("dy", "1.2em")
   .text("momentarily made things better again");
+
+  //callout for 2005
+
+  svg.append("line")
+  .attr("class", "callout-line-2005")
+  .attr("x1", xScale(2005))
+  .attr("y1", yScale(46326))
+  .attr("x2", xScale(2005) - 80)
+  .attr("y2", yScale(50000))
+  .attr("stroke", "black")
+  .attr("stroke-width", 1);
 
 
 
