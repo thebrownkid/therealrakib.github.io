@@ -35,7 +35,7 @@ console.log("data", data)
     .data(data)
     .join("rect")
     .attr("height", yScale.bandwidth())
-    .attr("width", d=> xScale(d.count) - margin) 
+    .attr("width", d=> xScale(d.count) - margin)
     .attr("x", margin)
     .attr("y", d=> yScale(d.activity))
 

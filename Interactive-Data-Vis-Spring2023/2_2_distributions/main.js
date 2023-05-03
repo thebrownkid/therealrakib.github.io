@@ -16,17 +16,18 @@ d3.csv("incomeData.csv", d3.autoType)
   .domain(d3.extent(data, d=>d.income))
   .range([height-margin.bottom,margin.top])
 
+
   const xScale = d3.scaleLinear()
-  .domain(d3.extent(data, d => d.year))
+  .domain([1988, 2022]) 
   .range([margin.left,width-margin.right])
 
-  //Democrats as blue. Republicans as Red.
+  //less than mean as red, greater than mean as blue
   const colorScale= d3.scaleOrdinal()
   .domain(["2", "1"])
   .range(["red", "blue"])
 
 
-  //using ideologyScore2020 to dictate size of the dots
+  //using difference (difference from mean of income - exp.) to dictate size of the dots
 
   const differenceScale = d3.scaleSqrt()
   .domain([0,d3.max(data.map(d => d.difference))])
@@ -75,8 +76,7 @@ d3.csv("incomeData.csv", d3.autoType)
 
 
     //scatterplot dots, x corresponds to year, y corresponds to income,
-    //radius correspond to income - consumer expenditure difference & filled as Party (D or R)
-
+    
   const dot = svg
     .selectAll("circle")
     .data(data)
