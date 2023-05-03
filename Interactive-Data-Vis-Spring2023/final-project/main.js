@@ -53,7 +53,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .padding(0.1);
 
   const yScale = d3.scaleLinear()
-    .domain([0, d3.max(data, d => d.income)])
+    .domain([0, d3.max(data, d => d.downPayment)])
     .range([height, 0]);
 
   // Create and append axes
