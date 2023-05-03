@@ -329,7 +329,7 @@ svg.append("text")
 .attr("text-anchor", "middle")
 .text("Dollars ($)");
 
-    //callout for 2019
+    //callout for 1993
 
     svg.append("line")
     .attr("class", "callout-line-2005")
@@ -355,6 +355,33 @@ svg.append("text")
     .attr("x", xScale(1995))
     .attr("dy", "1.2em")
     .text("could qualify for a mortgage **");
+
+        //callout for 2004
+
+        svg.append("line")
+        .attr("class", "callout-line-2005")
+        .attr("x1", xScale(2004))
+        .attr("y1", yScale(1042))
+        .attr("x2", xScale(2004))
+        .attr("y2", yScale(1300))
+        .attr("stroke", "black")
+        .attr("stroke-width", 1);
+      
+        svg.append("text")
+        .attr("class", "callout-text")
+        .attr("x", xScale(2004))
+        .attr("y", yScale(1300) - 35)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .text("Things worsened before the 2007-08 Financial Crisis")
+        .append("tspan")
+        .attr("x", xScale(2004))
+        .attr("dy", "1.2em")
+        .text("mainly as home prices increased (the housing bubble)")
+        .append("tspan")
+        .attr("x", xScale(2004))
+        .attr("dy", "1.2em")
+        .text("as subprime mortgages drove demand and spending. **");
 
 // Tooltip mouse functions (mouseover, mouse move and mouseleave)
 function mouseover() {
