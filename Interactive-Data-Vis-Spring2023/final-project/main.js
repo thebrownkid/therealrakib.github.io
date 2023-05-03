@@ -619,17 +619,7 @@ svg.append("path")
    .style("stroke", "red")
    .style("stroke-dasharray", "4")
    .style("stroke-width", 2);
-
-   svg.append("line")
-   .attr("class", "callout-line")
-   .attr("x1", xScale(2008))
-   .attr("y1", yScale(105))
-   .attr("x2", xScale(2008))
-   .attr("y2", yScale(130))
-   .attr("stroke", "black")
-   .attr("stroke-width", 1);
-  
-  
+    
   //create circles
 
   svg.selectAll(".dot")
@@ -687,7 +677,7 @@ svg.selectAll(".circle-top5")
     svg.append("text")
     .attr("class", "callout-text")
     .attr("x", xEZScale(2008))
-    .attr("y", yScale(150) - 35)
+    .attr("y", yScale(150) - 55)
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
     .text("Since 2008, median income earners")
@@ -705,7 +695,7 @@ svg.selectAll(".circle-top5")
         .attr("y1", yScale(291))
         .attr("x2", xEZScale(2003))
         .attr("y2", yScale(325))
-        .attr("stroke", "black")
+        .attr("stroke", "green")
         .attr("stroke-width", 1);
       
         svg.append("text")
@@ -713,6 +703,7 @@ svg.selectAll(".circle-top5")
         .attr("x", xEZScale(2003))
         .attr("y", yScale(325) - 20)
         .attr("text-anchor", "middle")
+        .attr("color", "green")
         .attr("font-size", "12px")
         .text("Top 10% earners have always qualified for mortgage.")
         .append("tspan")
