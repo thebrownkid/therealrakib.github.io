@@ -189,7 +189,7 @@ d3.csv("incomeHousing.csv").then(data => {
     .append("tspan")
     .attr("x", xScale(2015))
     .attr("dy", "1.2em")
-    .text("However, since the pandemic, housing prices")
+    .text("However, since the pandemic, home prices")
     .append("tspan")
     .attr("x", xScale(2015))
     .attr("dy", "1.2em")
