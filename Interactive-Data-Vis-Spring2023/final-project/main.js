@@ -444,9 +444,8 @@ const svg = d3.select("#third-container")
 
 // Create scales
 const xScale = d3.scaleLinear()
-.domain(data.map(d => d.year))
-.range([0, width])
-.padding(0.1);
+.domain(d3.extent(data, d => d.year))
+.range([0, width]);;
 
 const yScale = d3.scaleLinear()
 .domain([0, d3.max(data, d => Math.max(d.monthlyMortgage, d.monthlyIncome28median, d.monthlyIncome28minimum, d.monthlyIncome28top1 ))])
