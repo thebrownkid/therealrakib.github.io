@@ -740,20 +740,6 @@ svg.append("path")
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave);
 
-svg.selectAll(".circle-downpayment")
-  .data(data)
-  .enter()
-  .append("circle")
-  .attr("class", "circle-top10")
-  .attr("cx", d => xScale(d.year))
-  .attr("cy", d => yScale(d.downPayment))
-  .attr("r", 4)
-  .attr("stroke", "blue")
-  .attr("fill", "blue")
-  .on("mouseover", mouseover)
-  .on("mousemove", mousemove)
-  .on("mouseleave", mouseleave);
-
 svg.selectAll(".circle-white")
   .data(data)
   .enter()
