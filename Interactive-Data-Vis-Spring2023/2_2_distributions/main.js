@@ -13,7 +13,7 @@ d3.csv("incomeData.csv", d3.autoType)
 
     //income on y, Year on x
   const yScale = d3.scaleLinear()
-  .domain(25000,75000)
+  .domain([25000, 75000])
   .range([height-margin.bottom,margin.top])
 
 
