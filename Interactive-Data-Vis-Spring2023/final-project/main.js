@@ -758,4 +758,3 @@ svg.selectAll(".circle-top5")
 
 createFirstChart();
 createSecondChart();
-createThirdChart();
