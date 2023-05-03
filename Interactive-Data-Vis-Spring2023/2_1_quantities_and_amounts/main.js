@@ -1,7 +1,7 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * 0.7;
-const height = 500;
-margin = 50;
+const width = window.innerWidth * 0.8,
+  height = window.innerHeight * 0.8,
+  margin = { top: 20, bottom: 50, left: 70, right: 20 };
 
 /* LOAD DATA */
 d3.csv('squirrelActivities.csv', d3.autoType)
@@ -12,7 +12,7 @@ console.log("data", data)
     /** This is where you should define your scales from data to pixel space */
     const xScale = d3.scaleLinear()
     .domain([0, Math.max(...data.map(d => d.count))]) 
-    .range([margin, width - margin]) 
+    .range([margin.left, width - margin.right])
     
     const activity = ['running', 'chasing', 'climbing', 'eating', 'foraging'];
 

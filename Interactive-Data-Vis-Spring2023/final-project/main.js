@@ -809,8 +809,8 @@ svg.selectAll(".circle-white")
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave);
-
-
+// CAN ADD BARS (REDUCED OPACITY FOR DOWNPAYMENT AT THE BACK FOR COMPARISON)
+// ALSO ADDING CALLOUTS TO SPECIAL YEARS / EVENTS
 });
 
 }
