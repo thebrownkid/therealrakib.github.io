@@ -329,6 +329,33 @@ svg.append("text")
 .attr("text-anchor", "middle")
 .text("Dollars ($)");
 
+    //callout for 2019
+
+    svg.append("line")
+    .attr("class", "callout-line-2005")
+    .attr("x1", xScale(1993))
+    .attr("y1", yScale(729))
+    .attr("x2", xScale(1993))
+    .attr("y2", yScale(1000))
+    .attr("stroke", "black")
+    .attr("stroke-width", 1);
+  
+    svg.append("text")
+    .attr("class", "callout-text")
+    .attr("x", xScale(1993))
+    .attr("y", yScale(1000) - 35)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .text("1993 marked the first year in history")
+    .append("tspan")
+    .attr("x", xScale(1993))
+    .attr("dy", "1.2em")
+    .text("that the median income American")
+    .append("tspan")
+    .attr("x", xScale(1993))
+    .attr("dy", "1.2em")
+    .text("could qualify for a mortgage **");
+
 // Tooltip mouse functions (mouseover, mouse move and mouseleave)
 function mouseover() {
 tooltip
