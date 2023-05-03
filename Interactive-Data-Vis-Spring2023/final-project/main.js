@@ -813,6 +813,22 @@ svg.selectAll(".circle-white")
 // ALSO ADDING CALLOUTS TO SPECIAL YEARS / EVENTS
 });
 
+
+svg.selectAll(".income28-bar")
+.data(data)
+.join("rect")
+.attr("class", "income28-bar")
+.attr("x", d => xScale(d.year))
+.attr("y", d => yScale(d.downPayment)) 
+.attr("width", xScale.bandwidth())
+.attr("height", d => height - yScale(d.downPayment)) 
+.attr("fill", "blue")
+.style("opacity", 0.7) // 70% opacity can help improve understanding a bit
+.on("mouseover", mouseover) //event listener for mouseover
+.on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
+.on("mouseleave", mouseleave); //event listener for mouseleave
+
+
 }
 
 
