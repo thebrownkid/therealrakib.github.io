@@ -147,7 +147,7 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("class", "callout-line-2005")
   .attr("x1", xScale(2005))
   .attr("y1", yScale(46326))
-  .attr("x2", xScale(1999))
+  .attr("x2", xScale(1998))
   .attr("y2", yScale(50000))
   .attr("stroke", "black")
   .attr("stroke-width", 1);
@@ -155,17 +155,17 @@ d3.csv("incomeHousing.csv").then(data => {
     //adding the actual text for the callout
     svg.append("text")
     .attr("class", "callout-text")
-    .attr("x", xScale(2000))
+    .attr("x", xScale(1997))
     .attr("y", yScale(50000) - 35)
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
     .text("2005 marked the first year")
     .append("tspan")
-    .attr("x", xScale(2000))
+    .attr("x", xScale(1997))
     .attr("dy", "1.2em")
     .text("that down payment overtook income")
     .append("tspan")
-    .attr("x", xScale(2000))
+    .attr("x", xScale(1997))
     .attr("dy", "1.2em")
     .text("in US history");
 
