@@ -697,6 +697,33 @@ svg.selectAll(".circle-top5")
     .text("consistently qualify for mortgage **");
 
 
+        //callout for top 10% earners
+  
+        svg.append("line")
+        .attr("class", "callout-line")
+        .attr("x1", xEZScale(2003))
+        .attr("y1", yScale(291))
+        .attr("x2", xEZScale(2003))
+        .attr("y2", yScale(325))
+        .attr("stroke", "black")
+        .attr("stroke-width", 1);
+      
+        svg.append("text")
+        .attr("class", "callout-text")
+        .attr("x", xEZScale(2003))
+        .attr("y", yScale(325) - 20)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .text("Top 10% earners have always qualified for mortgage.")
+        .append("tspan")
+        .attr("x", xEZScale(2003))
+        .attr("dy", "1.2em")
+        .text("Also the chances of them qualifying continues**")
+        .append("tspan")
+        .attr("x", xEZScale(2003))
+        .attr("dy", "1.2em")
+        .text("improving faster than median income earners. **");
+
 });
 
 }
