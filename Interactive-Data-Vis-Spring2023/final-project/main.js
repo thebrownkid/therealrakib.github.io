@@ -507,6 +507,11 @@ const yScale = d3.scaleLinear()
 .domain([0, d3.max(data, d => Math.max(d.monthlyMortgage, d.monthlyIncome28median, d.monthlyIncome28minimum, d.monthlyIncome28top1 ))])
 .range([height, 0]);
 
+//a separate scale for ease of annotating
+const xEZScale = d3.scaleLinear()
+  .domain(d3.extent(data, d => d.yearstring))
+  .range([0, width]);
+
 // Create and append axes
 const xAxis = d3.axisBottom(xScale);
 const yAxis = d3.axisLeft(yScale);
@@ -615,6 +620,14 @@ svg.append("path")
    .style("stroke-dasharray", "4")
    .style("stroke-width", 2);
 
+   svg.append("line")
+   .attr("class", "callout-line")
+   .attr("x1", xScale(2008))
+   .attr("y1", yScale(105))
+   .attr("x2", xScale(2008))
+   .attr("y2", yScale(130))
+   .attr("stroke", "black")
+   .attr("stroke-width", 1);
   
   
   //create circles
@@ -664,22 +677,22 @@ svg.selectAll(".circle-top5")
   
     svg.append("line")
     .attr("class", "callout-line")
-    .attr("x1", xScale(2008))
+    .attr("x1", xEZScale(2008))
     .attr("y1", yScale(105))
-    .attr("x2", xScale(2008))
+    .attr("x2", xEZScale(2008))
     .attr("y2", yScale(130))
     .attr("stroke", "black")
     .attr("stroke-width", 1);
   
     svg.append("text")
     .attr("class", "callout-text")
-    .attr("x", xScale(2008))
+    .attr("x", xEZScale(2008))
     .attr("y", yScale(130))
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
     .text("Since 2008, median income earners")
     .append("tspan")
-    .attr("x", xScale(2008))
+    .attr("x", xEZScale(2008))
     .attr("dy", "1.2em")
     .text("consistently qualify for mortgage **");
 
