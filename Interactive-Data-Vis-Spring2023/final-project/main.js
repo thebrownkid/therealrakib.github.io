@@ -121,9 +121,9 @@ d3.csv("incomeHousing.csv").then(data => {
   svg.append("line")
   .attr("class", "callout-line")
   .attr("x1", xScale(2007))
-  .attr("y1", yScale(53000))
+  .attr("y1", yScale(48201))
   .attr("x2", xScale(2007) - 50)
-  .attr("y2", yScale(53000) + 30)
+  .attr("y2", yScale(53000))
   .attr("stroke", "black")
   .attr("stroke-width", 1);
 
