@@ -117,6 +117,17 @@ d3.csv("incomeHousing.csv").then(data => {
       .style("opacity", 0.7)
   }
 
+  //adding line for a callout I want to add
+  svg.append("line")
+  .attr("class", "callout-line")
+  .attr("x1", xScale(2007))
+  .attr("y1", yScale(5300))
+  .attr("x2", xScale(2007) + 50)
+  .attr("y2", yScale(5300) - 30)
+  .attr("stroke", "black")
+  .attr("stroke-width", 1);
+
+
   // Add bars for income
   svg.selectAll(".income-bar")
     .data(data)
