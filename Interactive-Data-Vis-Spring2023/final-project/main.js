@@ -591,7 +591,7 @@ const xScale = d3.scaleBand()
 .padding(0.1);
 
 const yScale = d3.scaleLinear()
-.domain([0, d3.max(data, d => Math.max(d.annualMedianIncome, d.downPayment, d.white, d.black, d.hispanic, d.asian))])
+.domain([20000, d3.max(data, d => Math.max(d.annualMedianIncome, d.downPayment, d.white, d.black, d.hispanic, d.asian))])
 .range([height, 0]);
 
 // Create and append axes
