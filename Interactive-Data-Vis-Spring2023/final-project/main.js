@@ -822,10 +822,7 @@ svg.selectAll(".income28-bar")
 .attr("width", xScale.bandwidth())
 .attr("height", d => height - yScale(d.downPayment)) 
 .attr("fill", "blue")
-.style("opacity", 0.7) // 70% opacity can help improve understanding a bit
-.on("mouseover", mouseover) //event listener for mouseover
-.on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
-.on("mouseleave", mouseleave); //event listener for mouseleave
+.style("opacity", 0.3) // 70% opacity can help improve understanding a bit
 });
 
 
