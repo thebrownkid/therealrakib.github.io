@@ -443,7 +443,7 @@ const svg = d3.select("#third-container")
 .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Create scales
-const xScale = d3.scaleBand()
+const xScale = d3.scaleLinear()
 .domain(data.map(d => d.year))
 .range([0, width])
 .padding(0.1);
