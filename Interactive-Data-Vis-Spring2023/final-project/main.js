@@ -542,28 +542,6 @@ svg.append("text")
 .attr("text-anchor", "middle")
 .text("Dollars ($)");
 
-  //callout for median income
-  
-  svg.append("line")
-  .attr("class", "callout-line")
-  .attr("x1", xScale(2008))
-  .attr("y1", yScale(105))
-  .attr("x2", xScale(2008))
-  .attr("y2", yScale(130))
-  .attr("stroke", "black")
-  .attr("stroke-width", 1);
-
-  svg.append("text")
-  .attr("class", "callout-text")
-  .attr("x", xScale(2008))
-  .attr("y", yScale(130))
-  .attr("text-anchor", "middle")
-  .attr("font-size", "12px")
-  .text("Since 2008, median income earners")
-  .append("tspan")
-  .attr("x", xScale(2008))
-  .attr("dy", "1.2em")
-  .text("consistently qualify for mortgage **");
 
 function mouseover(event, d) {
   tooltip
@@ -681,6 +659,29 @@ svg.selectAll(".circle-top5")
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
   .on("mouseleave", mouseleave);
+
+    //callout for median income
+  
+    svg.append("line")
+    .attr("class", "callout-line")
+    .attr("x1", xScale(2008))
+    .attr("y1", yScale(105))
+    .attr("x2", xScale(2008))
+    .attr("y2", yScale(130))
+    .attr("stroke", "black")
+    .attr("stroke-width", 1);
+  
+    svg.append("text")
+    .attr("class", "callout-text")
+    .attr("x", xScale(2008))
+    .attr("y", yScale(130))
+    .attr("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .text("Since 2008, median income earners")
+    .append("tspan")
+    .attr("x", xScale(2008))
+    .attr("dy", "1.2em")
+    .text("consistently qualify for mortgage **");
 
 
 });
