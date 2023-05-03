@@ -132,7 +132,7 @@ d3.csv("incomeHousing.csv").then(data => {
   svg.append("text")
   .attr("class", "callout-text")
   .attr("x", xScale(2007))
-  .attr("y", yScale(60000) - 15)
+  .attr("y", yScale(60000) - 20)
   .attr("text-anchor", "middle")
   .attr("font-size", "12px")
   .text("The 2007-2008 Financial Crisis")
