@@ -133,7 +133,11 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("y", yScale(60000) - 35)
   .attr("text-anchor", "middle")
   .attr("font-size", "12px")
-  .html('The 2007-2008 Financial Crisis<br>momentarily made things better again');
+  .text("The 2007-2008 Financial Crisis")
+  .append("tspan") // https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
+  .attr("dy", "1.2em")
+  .text("momentarily made things better again");
+
 
 
   // Add bars for income
