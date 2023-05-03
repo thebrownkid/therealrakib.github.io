@@ -426,6 +426,7 @@ const tooltip = d3.select("body")
 /* LOAD DATA */
 d3.csv("mortgageVSincome-controlled-copy.csv").then(data => {
 data.forEach(d => {
+d.yearstring = +d.Year;
 d.year = new Date(+d.Year, 0, 1);
 d.monthlyMortgage = +d['Monthly Mortgage Payment']; 
 d.monthlyIncome28median = +d['28% of Monthly Income - Median'];
@@ -498,7 +499,7 @@ function mouseover(event, d) {
 
 function mousemove(event, d) {
 tooltip
-.html(`Year: ${d.year}<br><u>Mortgage Qualification Index:</u> <br>Top 10%: ${d.monthlyIncome28top1} <br> Median Income: ${d.monthlyIncome28median}<br>Minimum Wage: ${d.monthlyIncome28minimum}`)
+.html(`Year: ${d.yearstring}<br><u>Mortgage Qualification Index:</u> <br>Top 10%: ${d.monthlyIncome28top1} <br> Median Income: ${d.monthlyIncome28median}<br>Minimum Wage: ${d.monthlyIncome28minimum}`)
 .style("left", event.pageX + 15 + "px")
 .style("top", event.pageY - 28 + "px");
 }
