@@ -715,6 +715,34 @@ svg.selectAll(".circle-top5")
         .attr("dy", "1.2em")
         .text("improving faster than median income earners. **");
 
+                //callout for minimum wage earners
+  
+                svg.append("line")
+                .attr("class", "callout-line")
+                .attr("x1", xEZScale(2014))
+                .attr("y1", yScale(31))
+                .attr("x2", xEZScale(2014))
+                .attr("y2", yScale(45))
+                .attr("stroke", "blue")
+                .attr("stroke-width", 1);
+              
+                svg.append("text")
+                .attr("class", "callout-text")
+                .attr("x", xEZScale(2014))
+                .attr("y", yScale(45) - 35)
+                .attr("text-anchor", "middle")
+                .attr("fill", "blue")
+                .attr("font-size", "12px")
+                .text("The unfortunate reality for minimum wage earners")
+                .append("tspan")
+                .attr("x", xEZScale(2014))
+                .attr("dy", "1.2em")
+                .text("is that their chances of mortgage qualification")
+                .append("tspan")
+                .attr("x", xEZScale(2014))
+                .attr("dy", "1.2em")
+                .text("have remained pretty much the same in 25 years **");
+
 });
 
 }
