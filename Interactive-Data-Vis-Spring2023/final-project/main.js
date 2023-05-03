@@ -692,13 +692,6 @@ const lineGenAsian = d3.line()
 
 svg.append("path")
   .datum(data)
-  .attr("d", lineGenDownPayment)
-  .attr("class", "line")
-  .attr("fill", "none")
-  .attr("stroke", "blue");
-
-svg.append("path")
-  .datum(data)
   .attr("d", lineGenWhite)
   .attr("class", "line")
   .attr("fill", "none")
