@@ -152,6 +152,23 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("stroke", "black")
   .attr("stroke-width", 1);
 
+    //adding the actual text for the callout
+    svg.append("text")
+    .attr("class", "callout-text")
+    .attr("x", xScale(2000))
+    .attr("y", yScale(50000) - 35)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .text("2005 marked the first year")
+    .append("tspan")
+    .attr("x", xScale(2000))
+    .attr("dy", "1.2em")
+    .text("that down payment overtook income")
+    .append("tspan")
+    .attr("x", xScale(2000))
+    .attr("dy", "1.2em")
+    .text("in US history");
+
 
 
   // Add bars for income
