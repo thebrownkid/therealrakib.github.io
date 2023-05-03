@@ -154,17 +154,17 @@ d3.csv("incomeHousing.csv").then(data => {
 
   svg.append("text")
   .attr("class", "callout-text")
-  .attr("x", xScale(1997))
+  .attr("x", xScale(1998))
   .attr("y", yScale(50000) - 35)
   .attr("text-anchor", "middle")
   .attr("font-size", "12px")
   .text("2005 marked the first year")
   .append("tspan")
-  .attr("x", xScale(1997))
+  .attr("x", xScale(1998))
   .attr("dy", "1.2em")
   .text("that down payment overtook income")
   .append("tspan")
-  .attr("x", xScale(1997))
+  .attr("x", xScale(1998))
   .attr("dy", "1.2em")
   .text("in US history");
 
