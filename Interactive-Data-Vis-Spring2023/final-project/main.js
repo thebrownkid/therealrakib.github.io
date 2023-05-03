@@ -139,7 +139,7 @@ d3.csv("incomeHousing.csv").then(data => {
   .append("tspan") // source: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan
   .attr("x", xScale(2004))
   .attr("dy", "1.2em")
-  .text("momentarily made things better again");
+  .text("momentarily made things better");
 
   //callout for 2005
 
@@ -152,24 +152,49 @@ d3.csv("incomeHousing.csv").then(data => {
   .attr("stroke", "black")
   .attr("stroke-width", 1);
 
-    //adding the actual text for the callout
+  svg.append("text")
+  .attr("class", "callout-text")
+  .attr("x", xScale(1997))
+  .attr("y", yScale(50000) - 35)
+  .attr("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .text("2005 marked the first year")
+  .append("tspan")
+  .attr("x", xScale(1997))
+  .attr("dy", "1.2em")
+  .text("that down payment overtook income")
+  .append("tspan")
+  .attr("x", xScale(1997))
+  .attr("dy", "1.2em")
+  .text("in US history");
+
+    //callout for 2019
+
+    svg.append("line")
+    .attr("class", "callout-line-2005")
+    .attr("x1", xScale(2019))
+    .attr("y1", yScale(64300))
+    .attr("x2", xScale(2016))
+    .attr("y2", yScale(70000))
+    .attr("stroke", "black")
+    .attr("stroke-width", 1);
+  
     svg.append("text")
     .attr("class", "callout-text")
-    .attr("x", xScale(1997))
-    .attr("y", yScale(50000) - 35)
+    .attr("x", xScale(2015))
+    .attr("y", yScale(70000) - 35)
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
-    .text("2005 marked the first year")
+    .text("Things started improving again in 2019.")
     .append("tspan")
-    .attr("x", xScale(1997))
+    .attr("x", xScale(2015))
     .attr("dy", "1.2em")
-    .text("that down payment overtook income")
+    .text("However, since the pandemic, housing prices")
     .append("tspan")
-    .attr("x", xScale(1997))
+    .attr("x", xScale(2015))
     .attr("dy", "1.2em")
-    .text("in US history");
-
-
+    .text("had the highest jump in history");
+  
 
   // Add bars for income
   svg.selectAll(".income-bar")
@@ -837,6 +862,9 @@ svg.selectAll(".circle-white")
 // CAN ADD BARS (REDUCED OPACITY FOR DOWNPAYMENT AT THE BACK FOR COMPARISON)
 // ALSO ADDING CALLOUTS TO SPECIAL YEARS / EVENTS
 
+
+////DONT FORGET THIS
+///THE CIRCLES IN THE LINE CHART DO NOT CORRESPOND TO PROPER YEARS ON AXIS
 
 });
 }
