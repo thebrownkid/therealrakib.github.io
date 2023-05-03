@@ -12,7 +12,7 @@ console.log("data", data)
     /** This is where you should define your scales from data to pixel space */
     const xScale = d3.scaleLinear()
     .domain([0, Math.max(...data.map(d => d.count))]) 
-    .range([margin.left, width - margin.right])
+    .range([margin, width - margin]) 
     
     const activity = ['running', 'chasing', 'climbing', 'eating', 'foraging'];
 
