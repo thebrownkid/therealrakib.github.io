@@ -1,5 +1,5 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * 0.9;
+const width = window.innerWidth * 0.8;
 const height = 500;
 margin = 50;
 
@@ -35,7 +35,7 @@ console.log("data", data)
     .data(data)
     .join("rect")
     .attr("height", yScale.bandwidth())
-    .attr("width", d=> xScale(d.count)) 
+    .attr("width", d=> xScale(d.count) - margin) 
     .attr("x", margin)
     .attr("y", d=> yScale(d.activity))
 
