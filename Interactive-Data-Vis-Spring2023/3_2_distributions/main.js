@@ -130,7 +130,7 @@ function mouseover() {
     .style("opacity", 1); //calls in tooltip when mouseover is triggered
   d3.select(this) //this will make the bars change opacity and add a stroke
     .style("stroke", "black")// this helps create an animation type effect that helps see which bar you are viewing
-    .style("opacity", 1);
+    .style("opacity", 0.2);
 }
 
 function mousemove(d) {
@@ -146,7 +146,7 @@ function mouseleave() {
     .style("opacity", 0)  //takes out tooltip when mouseleave is triggered
   d3.select(this)
     .style("stroke", "none")
-    .style("opacity", 0.7)
+    .style("opacity", 1)
 }
               
            //adding dots on the data points over the line chart to add the tooltip onto it 
