@@ -4,6 +4,7 @@
 //I have first changed the code to fit my data, then added on new elements to it
 //I have also cleaned up some of the code (although mostly styling that was redundant)
 
+function createFourthChartNew() {
 var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -232,3 +233,6 @@ function reDraw(name) {
   console.log(filterData);
   drawChart(filterData);
 }
+}
+
+createFourthChartNew();
