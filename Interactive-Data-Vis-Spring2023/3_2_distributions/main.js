@@ -122,6 +122,7 @@ function drawChart(filterData){
               .style("border-radius", "5px")
               .style("padding", "5px")
               .style("opacity", 0)
+              .style("pointer-events", "none") // I remembered that is important. otherwise sometimes it does this weird thing
               .style("transition", "opacity 0.2s ease-in-out");
               
               // Tooltip mouse functions (mouseover, mouse move and mouseleave)
