@@ -55,7 +55,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
           svg.append("path")
              .datum(data)
              .attr("fill", "blue")
-             .attr("opacity", 0.7)
+             .attr("opacity", 0.4)
              .attr("stroke", "black")
              .attr("stroke-width", 1.5)
              .attr("d", d3.area()
