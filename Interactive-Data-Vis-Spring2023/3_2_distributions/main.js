@@ -207,8 +207,16 @@ function mouseleave() {
     .append("tspan")
       .attr("x", width - 300)
       .attr("dy", "1.2em")
-      .text("Blue area chart represents 20% Down Payment");
-    ;
+      .text("Blue area chart represents 20% Down Payment")
+      .append("tspan")
+      .attr("x", width - 300)
+      .attr("dy", "1.2em")
+      .text("Legend is interactive.")
+      .append("tspan")
+      .attr("x", width - 300)
+      .attr("dy", "1.2em")
+      .text("Click on a legend item to hide/show the chart.")
+      ;
   });
 
 }
