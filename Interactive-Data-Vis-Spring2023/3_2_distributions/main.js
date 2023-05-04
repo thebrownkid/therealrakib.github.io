@@ -131,11 +131,12 @@ function mouseover() {
     .style("opacity", 1);
 }
 
-function mousemove(event, d) { //mousemove does this cool thing where the tooltip follows you as you are moving the mouse on the bars
+function mousemove(d) {
+  var event = d3.event; // Access the event object using D3 version 3
   tooltip
     .html(`Year: ${d.date.getFullYear()}<br>Value: ${d.value}`)
-    .style("left", event.pageX + 15 + "px")
-    .style("top", event.pageY - 28 + "px");
+    .style("left", (event.pageX + 15) + "px")
+    .style("top", (event.pageY - 28) + "px");
 }
 
 function mouseleave() {
@@ -156,7 +157,7 @@ function mouseleave() {
            .attr("r", 3.5)
            .style("fill", function(d) { return color(d.name); })
            .on("mouseover", mouseover) //event listener for mouseover
-           .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
+           .on("mousemove", mousemove) //event listener for mousemove
            .on("mouseleave", mouseleave); //event listener for mouseleave;
 
 
