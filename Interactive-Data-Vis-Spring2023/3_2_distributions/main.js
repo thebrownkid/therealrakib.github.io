@@ -201,7 +201,7 @@ function mouseleave() {
 
     svg.append("text")
     .attr("x", width - 300)
-    .attr("y", 100)
+    .attr("y", 450)
     .text("Blue area chart represents 20% Down Payment")
     .style("font-weight", "bold");
   
