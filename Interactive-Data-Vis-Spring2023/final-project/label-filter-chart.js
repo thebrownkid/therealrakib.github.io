@@ -56,8 +56,8 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
              .datum(data)
              .attr("fill", "blue")
              .attr("opacity", 0.4)
-             .attr("stroke", "black")
-             .attr("stroke-width", 1.5)
+             //.attr("stroke", "black")
+             //.attr("stroke-width", 1.5)
              .attr("d", d3.area()
                 .x(d => x(+d.year))
                 .y0(height)
@@ -74,7 +74,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
         .attr("class", d => d.name)
         .attr("d", d => line(d.values))
         .attr("stroke", d => myColor(d.name))
-        .style("stroke-width", 4)
+        .style("stroke-width", 2)
         .style("fill", "none")
 
     // Add the points
@@ -89,7 +89,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
       .join("circle")
         .attr("cx", d => x(d.year))
         .attr("cy", d => y(d.value))
-                .attr("r", 5)
+                .attr("r", 3.5)
         .attr("stroke", "white")
 
     // Add a label at the end of each line
