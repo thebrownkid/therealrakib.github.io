@@ -107,7 +107,7 @@ function createThirdChart() {
   
   function mousemove(event, d) {
   tooltip
-  .html(`Year: ${d.yearstring}<br><u>Mortgage Qualification Index:</u> <br>Top 10%: ${d.monthlyIncome28top1} <br> Median Income: ${d.monthlyIncome28median}<br>Minimum Wage: ${d.monthlyIncome28minimum}`)
+  .html(`Year: ${d.yearstring}<br><u>Mortgage Elibility Index:</u> <br>Top 10%: ${d.monthlyIncome28top1} <br> Median Income: ${d.monthlyIncome28median}<br>Minimum Wage: ${d.monthlyIncome28minimum}`)
   .style("left", event.pageX + 15 + "px")
   .style("top", event.pageY - 28 + "px");
   }
