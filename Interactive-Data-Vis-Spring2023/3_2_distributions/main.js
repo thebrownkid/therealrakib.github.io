@@ -165,11 +165,20 @@ function mouseleave() {
 
 
 
+    // changed position of legend to the left
     var legend = svg.selectAll('g.legend')
         .data(races)
         .enter()
       .append('g')
         .attr('class', 'legend');
+
+        //adding text LEGEND on top
+ legend.append("text")
+  .attr("x", width - 815)
+  .attr("y", -5)
+  .text("LEGEND:")
+  .style("font-weight", "bold");
+
 
     legend.append('rect')
         .attr('x', width - 800)
