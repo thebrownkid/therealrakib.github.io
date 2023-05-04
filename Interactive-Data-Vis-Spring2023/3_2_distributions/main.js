@@ -93,16 +93,18 @@ function drawChart(filterData){
 
         //adding a bar chart
 
-        svg.selectAll(".bar")
-  .data(data)
-  .enter().append("rect")
-  .attr("class", "bar")
-  .attr("x", function(d) { return x(d.year); })
-  .attr("y", function(d) { return y(d['down-payment']); })
-  .attr("width", x.rangeBand())
-  .attr("height", function(d) { return height - y(d['down-payment']); })
-  .style("fill", "steelblue")
-  .style("opacity", 0.4);
+        
+        var area = d3.svg.area()
+          .x(function(d) { return x(d.year); })
+          .y1(function(d) { return y(d['down-payment']); });
+
+        svg.append("path")
+           .data(data)
+           .attr("class", "area")
+           .attr("d", area)
+           .style("fill", "steelblue")
+           .style("opacity", 0.4);
+
 
 
     var legend = svg.selectAll('g.legend')
