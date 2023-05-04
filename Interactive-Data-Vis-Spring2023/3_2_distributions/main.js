@@ -91,6 +91,20 @@ function drawChart(filterData){
         .style("text-anchor", "end")
         .text("Income");
 
+        //adding a bar chart
+
+        svg.selectAll(".bar")
+  .data(data)
+  .enter().append("rect")
+  .attr("class", "bar")
+  .attr("x", function(d) { return x(d.year); })
+  .attr("y", function(d) { return y(d['down-payment']); })
+  .attr("width", x.rangeBand())
+  .attr("height", function(d) { return height - y(d['down-payment']); })
+  .style("fill", "steelblue")
+  .style("opacity", 0.4);
+
+
     var legend = svg.selectAll('g.legend')
         .data(races)
         .enter()
