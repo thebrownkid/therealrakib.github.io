@@ -169,10 +169,10 @@ function mouseover() {
       .join('g')
         .append("text")
           .attr('x', (d,i) => 30 + i*60)
-          .attr('y', 30)
+          .attr('y', 40)
           .text(d => d.name)
           .style("fill", d => myColor(d.name))
-          .style("font-size", 10)
+          .style("font-size", 15)
         .on("click", function(event, d){
           // is the element currently visible ?
           currentOpacity = d3.selectAll("." + d.name).style("opacity")
