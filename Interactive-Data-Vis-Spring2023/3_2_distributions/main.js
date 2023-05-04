@@ -178,7 +178,7 @@ function mouseleave() {
   svg.append("text")
   .attr("x", width - 800)
   .attr("y", -5)
-  .text("LEGEND:")
+  .text("INTERACTIVE LEGEND:")
   .style("font-weight", "bold");
 
 
