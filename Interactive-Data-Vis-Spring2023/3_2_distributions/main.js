@@ -99,9 +99,9 @@ function drawChart(filterData){
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
-    //svg.append("g")
-        //.attr("class", "y axis")
-        //.call(yAxis)
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
       //.append("text")
         //.attr("transform", "rotate(-90)")
         //.attr("y", 6)
@@ -173,8 +173,8 @@ function mouseleave() {
         .attr('class', 'legend');
 
         //adding text LEGEND on top
- legend.append("text")
-  .attr("x", width - 815)
+  svg.append("text")
+  .attr("x", width - 800)
   .attr("y", -5)
   .text("LEGEND:")
   .style("font-weight", "bold");
