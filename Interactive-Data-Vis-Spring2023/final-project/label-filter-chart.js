@@ -46,7 +46,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
 
     // Add Y axis
     const y = d3.scaleLinear()
-      .domain([10000, d3.max(data, d => Math.max(d.White, d.Asian, d.Hispanic, d.Black))])
+      .domain([20000, d3.max(data, d => Math.max(d.White, d.Asian, d.Hispanic, d.Black))])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
@@ -54,7 +54,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
           //adding an area chart for down-payment
           svg.append("path")
              .datum(data)
-             .attr("fill", "yellow")
+             .attr("fill", "red")
              .attr("opacity", 0.3)
              //.attr("stroke", "black")
              //.attr("stroke-width", 1.5)
