@@ -62,6 +62,21 @@ function drawChart(filterData){
 
     svg.selectAll("*").remove();
 
+    
+                   //adding an area chart for down payment to compare with line charts
+        
+                   var area = d3.svg.area()
+                   .x(function(d) { return x(d.date); })
+                   .y0(height)
+                   .y1(function(d) { return y(d['down-payment']); });
+           
+                 svg.append("path")
+                    .datum(data)
+                    .attr("class", "area")
+                    .attr("d", area)
+                    .style("fill", "steelblue")
+                    .style("opacity", 0.5);
+
     var race = svg.selectAll(".race")
         .data(races.filter(function(d) { return filterData[d.name] === true; }))
         .enter().append("g")
@@ -146,21 +161,6 @@ function mouseleave() {
            .on("mouseover", mouseover) //event listener for mouseover
            .on("mousemove", mousemove) //event listener for mousemove
            .on("mouseleave", mouseleave); //event listener for mouseleave;
-
-
-                   //adding an area chart for down payment to compare with line charts
-        
-        var area = d3.svg.area()
-        .x(function(d) { return x(d.date); })
-        .y0(height)
-        .y1(function(d) { return y(d['down-payment']); });
-
-      svg.append("path")
-         .datum(data)
-         .attr("class", "area")
-         .attr("d", area)
-         .style("fill", "steelblue")
-         .style("opacity", 0.5);
 
 
 
