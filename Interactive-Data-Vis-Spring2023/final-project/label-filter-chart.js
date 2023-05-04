@@ -46,7 +46,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
 
     // Add Y axis
     const y = d3.scaleLinear()
-      .domain([10000, d3.max(data, d => Math.max(d.white, d.asian, d.hispanic, d.black))])
+      .domain([10000, d3.max(data, d => Math.max(d.White, d.Asian, d.Hispanic, d.Black))])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
