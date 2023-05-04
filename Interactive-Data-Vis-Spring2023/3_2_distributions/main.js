@@ -1,3 +1,7 @@
+
+//adapted from Fabio Mainardi's Github code: https://gist.github.com/fabiomainardi/cf1233873ea5e7bc899b
+//which itself is adapted from an example by Bostock: http://bl.ocks.org/mbostock/3884955
+
 var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -30,7 +34,7 @@ var svg = d3.select("#container").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var filterData = {white: true, black: true, hispanic: true, asian: true};
+var filterData = {white: true, black: true, hispanic: true, asian: true}; //original code updated to reflect race
 
 function drawChart(filterData){
   d3.csv("incomeByRacecopy.csv", function(error, data) {
@@ -90,8 +94,7 @@ function drawChart(filterData){
         .style("text-anchor", "end")
         .text("Income");
 
-        //adding a bar chart
-
+        //adding an area chart for down payment to compare with line charts
         
         var area = d3.svg.area()
           .x(function(d) { return x(d.date); })
@@ -105,21 +108,45 @@ function drawChart(filterData){
            .style("fill", "steelblue")
            .style("opacity", 0.4);
 
-           //adding ciricles to the line chart
+           //tooltip
 
            const tooltip = d3.select("body")
-  .append("div")
-  .attr("id", "tooltip")
-  .attr("class", "tooltip")
-  .style("position", "absolute")
-  .style("background-color", "white")
-  .style("border", "solid 1px black")
-  .style("border-radius", "5px")
-  .style("padding", "5px")
-  .style("opacity", 0)
-  .style("transition", "opacity 0.2s ease-in-out");
+              .append("div")
+              .attr("id", "tooltip")
+              .attr("class", "tooltip")
+              .style("position", "absolute")
+              .style("background-color", "white")
+              .style("border", "solid 1px black")
+              .style("border-radius", "5px")
+              .style("padding", "5px")
+              .style("opacity", 0)
+              .style("transition", "opacity 0.2s ease-in-out");
+              
+              // Tooltip mouse functions (mouseover, mouse move and mouseleave)
+function mouseover() {
+  tooltip
+    .style("opacity", 1); //calls in tooltip when mouseover is triggered
+  d3.select(this) //this will make the bars change opacity and add a stroke
+    .style("stroke", "black")// this helps create an animation type effect that helps see which bar you are viewing
+    .style("opacity", 1);
+}
 
+function mousemove(event, d) { //mousemove does this cool thing where the tooltip follows you as you are moving the mouse on the bars
+  tooltip
+    .html(`Year: ${d.date.getFullYear()}<br>Value: ${d.value}`)
+    .style("left", event.pageX + 15 + "px")
+    .style("top", event.pageY - 28 + "px");
+}
 
+function mouseleave() {
+  tooltip
+    .style("opacity", 0)  //takes out tooltip when mouseleave is triggered
+  d3.select(this)
+    .style("stroke", "none")
+    .style("opacity", 0.7)
+}
+              
+           //adding dots on the data points over the line chart to add the tooltip onto it 
            race.selectAll(".dot")
            .data(function(d) { return d.values; })
            .enter().append("circle")
@@ -128,21 +155,9 @@ function drawChart(filterData){
            .attr("cy", function(d) { return y(d.value); })
            .attr("r", 3.5)
            .style("fill", function(d) { return color(d.name); })
-          
-            .on("mouseover", function(d) {
-              tooltip.transition()
-                .duration(200)
-                .style("opacity", 0.9);
-              tooltip.html(d.value)
-                .style("left", (d3.event.pageX + 5) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function(d) {
-              tooltip.transition()
-                .duration(500)
-                .style("opacity", 0);
-          
-          });
+           .on("mouseover", mouseover) //event listener for mouseover
+           .on("mousemove", (event, d) => mousemove(event, d)) //event listener for mousemove
+           .on("mouseleave", mouseleave); //event listener for mouseleave;
 
 
 
