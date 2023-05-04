@@ -156,8 +156,8 @@ function mouseover() {
           //adding some notes on the graph itself
     svg.append("text")
     .attr("x", (d,i) => 30 + i*60)
-    .attr("y", 25)
-    .text("Notes:")
+    .attr("y", 15)
+    .text("Click On Race To Show/Hide Lines:")
     .style("font-weight", "bold")
     
 
