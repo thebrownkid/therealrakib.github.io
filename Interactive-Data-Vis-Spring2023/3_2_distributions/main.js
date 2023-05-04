@@ -53,7 +53,7 @@ function drawChart(filterData){
     x.domain(d3.extent(data, function(d) { return d.date; }));
 
     y.domain([
-      d3.min(races, function(r) { return d3.min(r.values, function(v) { return v.value; }); }),
+      20000,
       d3.max(races, function(r) { return d3.max(r.values, function(v) { return v.value; }); })
     ]);
 
