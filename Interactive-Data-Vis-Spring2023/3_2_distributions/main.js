@@ -153,7 +153,7 @@ function drawChart(filterData){
         .attr('class', 'legend');
 
     legend.append('rect')
-        .attr('x', width - 900)
+        .attr('x', width - 800)
         .attr('y', function(d, i){ return i *  20;})
         .attr('width', 10)
         .attr('height', 10)
@@ -162,7 +162,7 @@ function drawChart(filterData){
         });
 
     legend.append('text')
-        .attr('x', width - 888)
+        .attr('x', width - 788)
         .attr('y', function(d, i){ return (i *  20) + 9;})
         .text(function(d){ return d.name; });
 
