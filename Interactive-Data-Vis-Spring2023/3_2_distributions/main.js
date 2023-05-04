@@ -106,6 +106,17 @@ function drawChart(filterData){
            .style("fill", "steelblue")
            .style("opacity", 0.4);
 
+           //adding ciricles to the line chart
+
+           race.selectAll(".dot")
+           .data(function(d) { return d.values; })
+           .enter().append("circle")
+           .attr("class", "dot")
+           .attr("cx", function(d) { return x(d.date); })
+           .attr("cy", function(d) { return y(d.value); })
+           .attr("r", 3.5)
+           .style("fill", function(d) { return color(d.name); });
+
 
 
     var legend = svg.selectAll('g.legend')
