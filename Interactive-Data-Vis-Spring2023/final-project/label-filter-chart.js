@@ -152,6 +152,13 @@ function mouseover() {
           .style("fill", d => myColor(d.name))
           .style("font-size", 15)
 
+
+          //adding some notes on the graph itself
+    svg.append("text")
+    .attr("x", (d,i) => 30 + i*60)
+    .attr("y", 25)
+    .text("Notes:")
+    .style("font-weight", "bold")
     
 
     // Add a legend (interactive)
