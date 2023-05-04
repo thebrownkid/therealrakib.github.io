@@ -1,6 +1,8 @@
 
 //adapted from Fabio Mainardi's Github code: https://gist.github.com/fabiomainardi/cf1233873ea5e7bc899b
 //which itself is adapted from an example by Bostock: http://bl.ocks.org/mbostock/3884955
+//I have first changed the code to fit my data, then added on new elements to it
+//I have also cleaned up some of the code (although mostly styling that was redundant)
 
 var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -75,7 +77,7 @@ function drawChart(filterData){
                     .attr("class", "area")
                     .attr("d", area)
                     .style("fill", "steelblue")
-                    .style("opacity", 0.5);
+                    .style("opacity", 0.7);
 
     var race = svg.selectAll(".race")
         .data(races.filter(function(d) { return filterData[d.name] === true; }))
@@ -207,7 +209,7 @@ function mouseleave() {
     .append("tspan")
       .attr("x", width - 300)
       .attr("dy", "1.2em")
-      .text("Blue area chart represents 20% Down Payment")
+      .text("Blue faded out area chart represents 20% Down Payment")
       .append("tspan")
       .attr("x", width - 300)
       .attr("dy", "1.2em")
