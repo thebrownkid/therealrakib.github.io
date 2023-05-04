@@ -19,7 +19,7 @@ const svg = d3.select("#my_dataviz")
 d3.csv("incomeByRaceNew.csv").then(function(data) {
 
     // List of groups (here I have one group per column)
-    const allGroup = ["asian", "white", "hispanic", "black"]
+    const allGroup = ["Asian", "White", "Hispanic", "Black"]
 
     // Reformat the data: we need an array of arrays of {x, y} tuples
     const dataReady = allGroup.map( function(grpName) {
