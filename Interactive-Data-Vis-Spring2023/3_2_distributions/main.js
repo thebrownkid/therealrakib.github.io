@@ -134,7 +134,7 @@ function mouseover() {
 function mousemove(d) {
   var event = d3.event; // Access the event object using D3 version 3
   tooltip
-    .html(`Year: ${d.date.getFullYear()}<br>Value: ${d.value}`)
+    .html(`Year: ${d.date.getFullYear()}<br>Income: $${d.value}`)
     .style("left", (event.pageX + 15) + "px")
     .style("top", (event.pageY - 28) + "px");
 }
