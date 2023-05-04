@@ -96,10 +96,11 @@ function drawChart(filterData){
         
         var area = d3.svg.area()
           .x(function(d) { return x(d.year); })
+          .y0(height)
           .y1(function(d) { return y(d['down-payment']); });
 
         svg.append("path")
-           .data(data)
+           .datum(data)
            .attr("class", "area")
            .attr("d", area)
            .style("fill", "steelblue")
