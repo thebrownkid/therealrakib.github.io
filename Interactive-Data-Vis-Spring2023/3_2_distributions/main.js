@@ -201,10 +201,14 @@ function mouseleave() {
 
     svg.append("text")
     .attr("x", width - 300)
-    .attr("y", 450)
-    .text("Blue area chart represents 20% Down Payment")
-    .style("font-weight", "bold");
-  
+    .attr("y", 400)
+    .text("Notes:")
+    .style("font-weight", "bold")
+    .append("tspan")
+      .attr("x", width - 300)
+      .attr("dy", "1.2em")
+      .text("Blue area chart represents 20% Down Payment");
+    ;
   });
 
 }
