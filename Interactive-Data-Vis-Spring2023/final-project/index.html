@@ -12,7 +12,7 @@
     <meta charset="utf-8">
 
     
-    <title>Annual Household Income vs Median Down Payment (20% of Median Home Price)</title>
+    <title>Home Ownership Accessibility</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="./style.css">
     <script src="../lib/d3.js"></script>
@@ -22,7 +22,7 @@
     <div class="all-content-center">
 
     <div class="title">
-        <h1>Declining Home Ownership Affordability in the United States</h1>
+        <h1>Home Onwership Accessibility in the United States</h1>
         <p>Muhammad Rakibul Islam (Rakib)</p>
     </div>
 
@@ -31,9 +31,9 @@
     <img src="images/header-image.jpg" alt="Header Image" style="width: 100%;">
 
     <p>Owning a home is one of the biggest aspirations for most people in the United States. In fact, according to a <a href="https://www.nerdwallet.com/article/mortgages/2018-home-buyer-report#:~:text=Homebuying%20concerns,have%20concerns%20about%20purchasing%20one.">survey conducted by NerdWallet</a>, “an overwhelming majority of Americans (91%) would like to own at least one home in their lifetime”.</p>
-    <p>However, concerns have been rising for a good number of years now about the decreasing affordability of the market compared to income growth.</p>
-    <p>During the past two years, having worked as a strategy consultant for political campaigns, I have come across several constituent surveys where homeownership affordability was a common issue.</p>
-    <p>That and my personal interest in homeownership created a natural curiosity to see how affordability has changed.</p>
+    <p>However, concerns have been rising for a good number of years now about how accessible the market really is.</p>
+    <p>During the past two years, having worked as a strategy consultant for political campaigns, I have come across several constituent surveys where home ownership affordability was a common issue.</p>
+    <p>That and my personal interest in home ownership created a natural curiosity to see how affordability has changed.</p>
 
     <h4 class="title">Table of Contents</h4>
     <p><b><a href="#income_down">1. Income vs Down Payment</a></b></p>
@@ -41,8 +41,8 @@
     <p><b><a href="#income_down">3. Income Division by Percentile</a></b></p>
 
     <h2 class="title" id="income_down">Income vs Down Payment</h2>
-    <p>One of the most fundamental methodologies to track homeownership affordability is to see how household income has changed relative to home prices.</p>
-    <p>However, the home sales price is a much higher number when compared to income. Additionally, most home buyers traditionally use a loan instead of buying outright. Hence, the better comparison would be between the median annual income and the median down payment (calculates as 20% of the home sales price – the standardized down payment percentage used by lenders and realtors).</p>
+    <p>One of the fundamental methodologies used to track home ownership accessibility is to study how household income has changed relative to home prices.</p>
+    <p>However, the home sales price is a much higher number when compared to income. Additionally, most home buyers traditionally use a loan instead of buying outright. Hence, the better comparison would be between the median annual income and the median down payment (calculates as 20% of the home sales price - the standard down payment percentage used by lenders and realtors).</p>
 
     <div id="container"> </div>
     <script src="first-chart.js"></script>
@@ -62,18 +62,19 @@
 
 <br>
 
-<p>What is evident here is that affordability does decrease over time as the down payment overtakes income over time and is growing at a faster rate.</p>
-<p>The first time this was recorded in history is in 2004 and then again things momentarily get better for a few years after the 2007-2008 financial crisis. The years leading up to the financial crisis saw housing prices increasing faster than the norm (a bubble that would eventually burst). Since getting a subprime mortgage was easy, the increased home buying demand drove housing prices up fast but just as fast as it happened, it soon tanked after the great recession.</p>
-<p>2021 again registered a huge jump when mortgage rates reached a record low making home buying prospects better while at the same time, thanks to the various economic stimuli, people had more income in hand. This drove demand for housing high and since supply is limited, housing prices soared.</p>
+<p>What is evident here is that accessibility does decrease over time for the median earning American as the down payment overtakes income over time and is growing at a faster rate.</p>
+<p>The first time this was recorded in history is in 2005 and then again things momentarily get better for a few years after the 2007-2008 financial crisis. The years leading up to the financial crisis saw housing prices increasing faster than the norm (a bubble that would eventually burst). Since getting a subprime mortgage was easy, the increased home buying demand drove housing prices up fast but just as fast as it happened, it soon tanked after the great recession.</p>
+<p>Things started getting better again in 2019. However, post pandemic, 2021 again registered a huge jump when mortgage rates reached a record low making home buying prospects better while at the same time, thanks to the various economic stimuli, people had more income in hand. This drove demand for housing high and since supply is limited, housing prices soared.</p>
 
 <h2 class="title" id="mortgage_eligibility">Mortgage Eligibility</h2>
-    <p>While being able to afford the down payment is after all the most important component of the home-buying process, what is also the next important step is to see if somebody will actually qualify for the mortgage itself.</p>
-    <p>This is a trickier question as a lot of factors do come into play including credit score, lending history, overall debt, etc. But since we are on the topic of affordability as an income topic, the single most important factor that lenders use for mortgage qualification is to check the monthly mortgage payment to income ratio.</p>
+    <p>While being able to afford the down payment is after all the most important component of the home-buying process, an important step is to see if somebody will actually qualify for the mortgage itself. Let's say you have worked for years to save up for the down payment or have received some gifts and now want to get a mortgage.</p>
+    <p>This is a trickier question as a lot of factors do come into play including credit score, lending history, overall debt, etc. But since we are discussing accessibility as an income based topic, the most important factor that lenders use for mortgage qualification is to check the monthly mortgage payment to income ratio.</p>
     <p>Lenders in the United States commonly use the 28% rule where a person will qualify for a mortgage, provided again that all other conditions are met, only when their monthly mortgage payment will not exceed 28% of their monthly income.</p>
     <p>Now to visualize this, I had already gathered the median income data so it would not be difficult to calculate the median 28% of monthly income.</p>
-    <p>However, the monthly mortgage payment is a little trickier to calculate. Now some of the information was already available. I knew the median home sale price, and that a 20% down payment was to be made and considered the standard 30-year loan that most buyers use. The remaining data that was necessary was the average mortgage rate for a particular year which helps determine the monthly payment. </p>   
+    <p>28% of income is an easy calculation and then we calculate the median mortgage based on median home price. If you would like to know more about the calculation method used, <a href="www.google.com">notes are provided later</a>.</p>
+    <!--p>However, the monthly mortgage payment is a little trickier to calculate. Now some of the information was already available. I knew the median home sale price, and that a 20% down payment was to be made and considered the standard 30-year loan that most buyers use. The remaining data that was necessary was the average mortgage rate for a particular year which helps determine the monthly payment. </p>   
     <p>Thankfully Excel has a very useful function called the PMT function which helps determine the monthly mortgage payment quite easily once all other data was available. </p>
-    <p>You can earn more about PMT function at this <a href="https://support.microsoft.com/en-us/office/pmt-function-0214da64-9a63-4996-bc20-214433fa6441">Micrososft 365 Support Page</a>.</p>
+    <p>You can earn more about PMT function at this <a href="https://support.microsoft.com/en-us/office/pmt-function-0214da64-9a63-4996-bc20-214433fa6441">Micrososft 365 Support Page</a>.</p-->
     
     <div id="second-container"></div>
     <script src="second-chart.js"></script>
@@ -94,15 +95,23 @@
 
     <br>
 
-    <p>The affordability story is reversed when it comes to mortgage eligibility. Provided that you had the down payment ready and met credit and debt factors, it became easier to qualify for a mortgage over the years. This can be seen from the bar chart of 28% monthly income and average mortgage payment over the years.</p>
-    <p>It first became easy to qualify in 1993 and then things again momentarily became unaffordable before the financial crisis owing to an increase in both home sales prices and mortgage rates during those years.</p>
-<p><em>*Although the data for 2022 is not available here, given the meteoric rise in interest rates while income did not, mortgage eligibility again became more difficult but it is getting better over time.</em></p>
+    <p>** assuming that all other mortgage conditions (credit history, debt ration etc.) are met.</p>
 
-<h2 class="title"> Income Division by Percentile </h2>
+    <br>
+
+    <p>The story is reversed when it comes to mortgage eligibility. Provided that you had the down payment ready and met credit and debt factors, it became easier to qualify for a mortgage over the years as per the chart above.</p>
+    <p>It first became easy to qualify in 1993 and then things again momentarily became unaffordable before the financial crisis as home prices soared (the housing bubble) as subprime mortgages drove demand and spending.</p>
+<p><em>*Although the data for 2022 is not available here, given the meteoric rise in interest rates to combat inflation and continued growth of home prices while income did not, mortgage eligibility again became more difficult.</em></p>
+
+<h2 class="title"> Mortgage Eligibility by Income Groups </h2>
+
+<p>An important, and often overlooked, question to ask how different income groups might face a different story when it comes to mortgage eligbility</p>
+<p>To achieve this, and since income is the factor we are interested in, keeping all other mortgage conditions standardized (assuming they will be met), we create a Standardized Mortgage Elgibility Index (SMEI). </p>
+<p>The calculation is made by dividing the 28& of monthly income by median monthly mortgage payment. A value above 100 means a person will be elgibible for mortgage while below 100 means they will not. </p>
+<p>We already had the data for Median Income but introduced income for the Top 10% earners and Minimum Wage Earners (calculated using US Federal Minimum Wage).</p>
 
 <div id="third-container"></div>
 <script src="third-chart.js"></script>
-
 
 <div class="legend">
   <div class="legend-item">
@@ -121,6 +130,14 @@
   <div class="legend-color" style="background-color: blue;"></div>
   <span>Minimum Wage Income SMEI</span>
 </div>
+
+<p>** assuming that all other mortgage conditions (credit history, debt ration etc.) are met.</p>
+
+<p>What this shows is a stark contrast. While things have gotten better for the Median Income group, Top 10% Earners have always been easily able to qualify for mortgage. Also the mortgage elgibility growth rate for Top 10% outpaces that of Median Earners.</p>
+<p>On the opposite end, Minimum Wage Earners have not seen any real improvement in their eligbility in 25 years.</p>
+<p>This is concerning because home ownership is a widely accepted means of growing your wealth and financial freedom. As Top 10% earners followed by Median Income earners outpace Minimum Wage earners for mortgage eligbility, the wealth gap that already exist will only widen.</p>
+<p>An important note to make is that this index considers that other conditions are met. However, factors like credit history, debt ratio etc. also affect the income groups differently. If they were considered, the contrast would have be sharper.</p>
+
 
 </div>
 
