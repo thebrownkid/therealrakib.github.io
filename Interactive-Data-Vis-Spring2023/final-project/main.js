@@ -27,6 +27,7 @@ const width = document.querySelector('.all-content-center').clientWidth * 0.8; /
         .style("border", "solid 1px black")
         .style("border-radius", "5px") //border radius make it round which I like
         .style("padding", "5px") //padding added to make text more readable within tooltip
+        .style("pointer-events", "none") //without this tooltip sometimes doesnt show. I asked a friend for suggestion and he suggested using this which worked
         .style("opacity", 0) //setting initial opacty to 0
         .style("transition", "opacity 0.2s ease-in-out"); //a little transition looks nice
       
