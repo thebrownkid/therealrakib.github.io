@@ -114,7 +114,22 @@ function drawChart(filterData){
            .attr("cx", function(d) { return x(d.date); })
            .attr("cy", function(d) { return y(d.value); })
            .attr("r", 3.5)
-           .style("fill", function(d) { return color(d.name); });
+           .style("fill", function(d) { return color(d.name); })
+          
+            .on("mouseover", function(d) {
+              tooltip.transition()
+                .duration(200)
+                .style("opacity", 0.9);
+              tooltip.html(d.name + "<br/>" + d.value)
+                .style("left", (d3.event.pageX + 5) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+              tooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+          
+          });
 
 
 
