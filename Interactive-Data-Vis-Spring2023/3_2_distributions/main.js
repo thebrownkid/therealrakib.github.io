@@ -107,6 +107,19 @@ function drawChart(filterData){
 
            //adding ciricles to the line chart
 
+           const tooltip = d3.select("body")
+  .append("div")
+  .attr("id", "tooltip")
+  .attr("class", "tooltip")
+  .style("position", "absolute")
+  .style("background-color", "white")
+  .style("border", "solid 1px black")
+  .style("border-radius", "5px")
+  .style("padding", "5px")
+  .style("opacity", 0)
+  .style("transition", "opacity 0.2s ease-in-out");
+
+
            race.selectAll(".dot")
            .data(function(d) { return d.values; })
            .enter().append("circle")
