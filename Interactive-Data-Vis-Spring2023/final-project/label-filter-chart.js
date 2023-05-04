@@ -70,7 +70,7 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
              .attr("fill", "red")
              .attr("opacity", 0.3)
              .attr("stroke", "black")
-             .attr("stroke-width", 1.5)
+             .attr("stroke-width", 0.5)
              .attr("d", d3.area()
                 .x(d => x(+d.year))
                 .y0(height)
