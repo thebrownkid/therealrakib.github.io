@@ -91,7 +91,7 @@ function mouseover() {
   
   function mousemove(event, d) { //mousemove does this cool thing where the tooltip follows you as you are moving the mouse on the bars
     tooltip
-      .html(`Year: ${d.year} <br> $${d.value})`)
+      .html(`Year: ${d.year} <br> $${d.value}`)
       .style("left", event.pageX + 15 + "px")
       .style("top", event.pageY - 28 + "px");
   }
@@ -101,8 +101,8 @@ function mouseover() {
     tooltip
     .style("opacity", 0)  //takes out tooltip when mouseleave is triggered
     d3.select(this)
-      .style("stroke", "none")
-      .style("opacity", 0.7)
+      .style("stroke", "white")
+      .style("opacity", 1)
   }
 
 
