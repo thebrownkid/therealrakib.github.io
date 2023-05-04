@@ -15,6 +15,19 @@ const svg = d3.select("#my_dataviz")
   .append("g")
     .attr("transform",`translate(${margin.left},${margin.top})`);
 
+    const tooltip = d3.select("body")
+    .append("div")
+    .attr("id", "tooltip")
+    .attr("class", "tooltip")
+    .style("position", "absolute") //tooltip would not show then I searched on Google for similar issues and got the idea here: https://stackoverflow.com/questions/67887686/tooltip-not-showing-only-on-hover
+    .style("background-color", "white")
+    .style("border", "solid 1px black")
+    .style("border-radius", "5px") //border radius make it round which I like
+    .style("padding", "5px") //padding added to make text more readable within tooltip
+    .style("pointer-events", "none") //without this tooltip sometimes doesnt show. I asked a friend for suggestion and he suggested using this which worked
+    .style("opacity", 0) //setting initial opacty to 0
+    .style("transition", "opacity 0.2s ease-in-out"); //a little transition looks nice
+
 // Read the data
 d3.csv("incomeByRaceNew.csv").then(function(data) {
 
@@ -56,13 +69,43 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
              .datum(data)
              .attr("fill", "red")
              .attr("opacity", 0.3)
-             //.attr("stroke", "black")
-             //.attr("stroke-width", 1.5)
+             .attr("stroke", "black")
+             .attr("stroke-width", 1.5)
              .attr("d", d3.area()
                 .x(d => x(+d.year))
                 .y0(height)
                 .y1(d => y(+d["down-payment"]))
                 );
+
+
+
+// Tooltip mouse functions (mouseover, mouse move and mouseleave)
+//copied over from other chart to edit
+function mouseover() {
+    tooltip
+    .style("opacity", 1); //calls in tooltip when mouseover is triggered
+    d3.select(this) //this will make the bars change opacity and add a stroke
+    .style("stroke", "black")// this helps create an animation type effect that helps see which bar you are viewing
+    .style("opacity", 1);
+  }
+  
+  function mousemove(event, d) { //mousemove does this cool thing where the tooltip follows you as you are moving the mouse on the bars
+    tooltip
+      .html(`Year: ${d.year} <br> $${d.value})`)
+      .style("left", event.pageX + 15 + "px")
+      .style("top", event.pageY - 28 + "px");
+  }
+  
+  
+  function mouseleave() {
+    tooltip
+    .style("opacity", 0)  //takes out tooltip when mouseleave is triggered
+    d3.select(this)
+      .style("stroke", "none")
+      .style("opacity", 0.7)
+  }
+
+
 
     // Add the lines
     const line = d3.line()
@@ -91,6 +134,9 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
         .attr("cy", d => y(d.value))
                 .attr("r", 4)
         .attr("stroke", "white")
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave);
 
     // Add a label at the end of each line
     svg
