@@ -197,13 +197,15 @@ function mouseleave() {
     legend.on("click", function(d) {
       reDraw(d.name);
     });
-  });
 
-  svg.append("text")
-  .attr("x", width - 300)
-  .attr("y", 100)
-  .text("Blue area chart represents 20% Down Payment")
-  .style("font-weight", "bold");
+
+    svg.append("text")
+    .attr("x", width - 300)
+    .attr("y", 100)
+    .text("Blue area chart represents 20% Down Payment")
+    .style("font-weight", "bold");
+  
+  });
 
 }
 
