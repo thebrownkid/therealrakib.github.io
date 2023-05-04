@@ -21,9 +21,8 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var line = d3.svg.line()
-    .interpolate("basis")
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.value); });
+.x(function(d) { return x(d.date); })
+.y(function(d) { return y(d.value); });
 
 var svg = d3.select("#container").append("svg")
     .attr("width", width + margin.left + margin.right)
