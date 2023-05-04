@@ -153,13 +153,29 @@ function mouseover() {
           .style("font-size", 15)
 
 
-          //adding some notes on the graph itself
+    //text above legend
     svg.append("text")
     .attr("x", (d,i) => 30 + i*60)
     .attr("y", 20)
     .text("Click On Race To Show/Hide Lines:")
     .style("font-weight", "bold")
     .style("font-size", 15)
+
+
+    //note about the pink area chart
+    svg.append("text")
+    .attr("x", width - 10)
+    .attr("y", 400)
+    .text("Pink area chart represents 20% Down Payment")
+    .style("font-weight", "bold")
+    .append("tspan")
+      .attr("x", width - 300)
+      .attr("dy", "1.2em")
+      .text("Lines above this chart represents higher affordability")
+      .append("tspan")
+      .attr("x", width - 300)
+      .attr("dy", "1.2em")
+      .text("Lines inside this chart represents lower affordability")
     
 
     // Add a legend (interactive)
