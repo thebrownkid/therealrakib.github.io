@@ -164,17 +164,17 @@ function mouseover() {
 
     //note about the pink area chart
     svg.append("text")
-    .attr("x", width - 300)
-    .attr("y", 370)
+    .attr("x", width - 250)
+    .attr("y", 360)
     .text("Pink area chart represents 20% Down Payment")
     .style("font-weight", "bold")
     .style("font-size", 10)
     .append("tspan")
-      .attr("x", width - 300)
+      .attr("x", width - 250)
       .attr("dy", "1.2em")
       .text("Lines above this chart represents higher affordability")
       .append("tspan")
-      .attr("x", width - 300)
+      .attr("x", width - 250)
       .attr("dy", "1.2em")
       .text("Lines inside this chart represents lower affordability")
     
