@@ -9,9 +9,10 @@
 
 <script>
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 100, bottom: 30, left: 30},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+const width = window.innerWidth * 0.8,
+      height = window.innerHeight * 0.8,
+      margin = {top: 20, right: 20, bottom: 50, left: 70},
+      radius = 5;
 
 // append the svg object to the body of the page
 const svg = d3.select("#my_dataviz")
