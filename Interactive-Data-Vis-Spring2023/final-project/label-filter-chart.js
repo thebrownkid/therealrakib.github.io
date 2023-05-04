@@ -51,6 +51,19 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
     svg.append("g")
       .call(d3.axisLeft(y));
 
+          //adding an area chart for down-payment
+          svg.append("path")
+             .datum(data)
+             .attr("fill", "blue")
+             .attr("opacity", 0.7)
+             .attr("stroke", "black")
+             .attr("stroke-width", 1.5)
+             .attr("d", d3.area()
+                .x(d => x(+d.year))
+                .y0(height)
+                .y1(d => y(+d["down-payment"]))
+                );
+
     // Add the lines
     const line = d3.line()
       .x(d => x(+d.year))
@@ -92,6 +105,8 @@ d3.csv("incomeByRaceNew.csv").then(function(data) {
           .text(d => d.name)
           .style("fill", d => myColor(d.name))
           .style("font-size", 15)
+
+    
 
     // Add a legend (interactive)
     svg
