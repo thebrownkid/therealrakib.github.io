@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <!-- Websites I have utilized to get help with coding issues and coming up with ideas:
@@ -42,6 +40,12 @@
     <p><b><a href="#mortgage_eligibility">2. Mortgage Eligibility</a></b></p>
     <p><b><a href="#income-groups">3. Mortgage Eligibility by Income Groups</a></b></p>
     <p><b><a href="#race-chart">4. Income vs Down Payment by Race</a></b></p>
+
+    <p><b><a href="#brief-analysis">5. Brief Analysis</a></b></p>
+    <p><b><a href="#policy-recommendation">6. Policy Recommendation</a></b></p>
+    <p><b><a href="#data-sources">7. Data Sources</a></b></p>
+
+
   
 
     <h2 class="title" id="income_down">Income vs Down Payment</h2>
@@ -76,7 +80,7 @@
     <p>This is a trickier question as a lot of factors do come into play including credit score, lending history, overall debt, etc. But since we are discussing accessibility as an income based topic, the most important factor that lenders use for mortgage qualification is to check the monthly mortgage payment to income ratio.</p>
     <p>Lenders in the United States commonly use the 28% rule where a person will qualify for a mortgage, provided again that all other conditions are met, only when their monthly mortgage payment will not exceed 28% of their monthly income.</p>
     <p>Now to visualize this, I had already gathered the median income data so it would not be difficult to calculate the median 28% of monthly income.</p>
-    <p>28% of income is an easy calculation and then we calculate the median mortgage based on median home price. If you would like to know more about the calculation method used, <a href="www.google.com">notes are provided later</a>.</p>
+    <p>28% of income is an easy calculation and then we calculate the median mortgage based on median home price and average interest rate for a year.</p>
     <!--p>However, the monthly mortgage payment is a little trickier to calculate. Now some of the information was already available. I knew the median home sale price, and that a 20% down payment was to be made and considered the standard 30-year loan that most buyers use. The remaining data that was necessary was the average mortgage rate for a particular year which helps determine the monthly payment. </p>   
     <p>Thankfully Excel has a very useful function called the PMT function which helps determine the monthly mortgage payment quite easily once all other data was available. </p>
     <p>You can earn more about PMT function at this <a href="https://support.microsoft.com/en-us/office/pmt-function-0214da64-9a63-4996-bc20-214433fa6441">Micrososft 365 Support Page</a>.</p-->
@@ -184,6 +188,25 @@
 <p>There are indirect methods that can be useful as well such as providing incentives and regulatory relief to stimulate the construction of lower cost houses and as well as owner occupied housing like condominiums.</p>
 <p>Another important policy is to create programs for home ownership sustainability. While qualifying for a mortgage and buying a house is an important first step, it is also equally needed that buyers can sustain it. Providing tax relief, financial literacy programs, foreclosure prevention, repair assistance etc. are just some ways that can tremendously help.</p>
 <p>Issues like home ownership accessibility are complex and require regular overview. All stakeholders whether private development corporations, non-profit organizations and related government agencies are encouraged to give the matter importance and look beyond basic metrics to uncover the ways different groups are affected.</p>
+
+<h2 class="title" id="data-sources"> Data Sources </h2>
+
+<ul style="text-align: left;">
+  <li>U.S. Census Bureau, Median Household Income in the United States [MEHOINUSA646N], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/MEHOINUSA646N">https://fred.stlouisfed.org/series/MEHOINUSA646N</a></li>
+  <li>Statista. (2022, September 22). U.S. median household income 1967-2021, by race. <a href="https://www.statista.com/statistics/1086359/median-household-income-race-us/">https://www.statista.com/statistics/1086359/median-household-income-race-us/</a></li>
+  <li>U.S. Census Bureau and U.S. Department of Housing and Urban Development, Median Sales Price of Houses Sold for the United States [MSPUS], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/MSPUS">https://fred.stlouisfed.org/series/MSPUS</a></li>
+  <li>Federal Reserve Bank of Cleveland, 10-Year Real Interest Rate [REAINTRATREARAT10Y], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/REAINTRATREARAT10Y">https://fred.stlouisfed.org/series/REAINTRATREARAT10Y</a></li>
+  <li>Pk. (2022). Household Income by Year: Average, Median, One Percent (and a Percentile Calculator). DQYDJ – Don’t Quit Your Day Job. <a href="https://dqydj.com/household-income-by-year/">https://dqydj.com/household-income-by-year/</a></li>
+</ul>
+
+<h2 class="title" id="data-sources"> Code Inspiration, Ideas & Troubleshooting </h2>
+
+<p>
+<a href="https://www.w3schools.com">W3Schools</a>, 
+<a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>, 
+<a href="https://d3-graph-gallery.com">The D3.js Graph Gallery</a>, 
+<a href="https://observablehq.com/@d3?tab=public">Observable Public Notebooks</a>
+</p>
 
 </div>
 
