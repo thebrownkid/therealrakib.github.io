@@ -220,11 +220,9 @@ d3.csv("incomeHousing.csv").then(data => {
          .join("rect")
          .attr("class", "downpayment-bar")
          .attr("x", d => xScale(d.year))
-         .attr("y", d => yScale(0))
          .attr("y", d => yScale(d.downPayment)) 
          .attr("height", d => height - yScale(d.downPayment)) 
          .attr("width", xScale.bandwidth())
-         .attr("height", d => height - yScale(0))
          .attr("fill", "red")
          .style("opacity", 0.7)
 
