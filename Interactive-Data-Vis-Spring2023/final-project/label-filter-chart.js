@@ -104,7 +104,6 @@ function mouseover() {
     d3.select(this)
       .style("stroke", "white")
       .style("opacity", 1)
-      .style("transition", "0.5s ease-in-out");
   }
 
 
