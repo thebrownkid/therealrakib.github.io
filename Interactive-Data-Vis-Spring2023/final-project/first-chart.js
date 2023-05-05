@@ -221,8 +221,8 @@ d3.csv("incomeHousing.csv").then(data => {
          .attr("class", "downpayment-bar")
          .attr("x", d => xScale(d.year))
          .attr("y", d => yScale(0))
-         .attr("y", d => yScale(d.downPayment)) // previous set to 0 and now to actual data
-         .attr("height", d => height - yScale(d.downPayment)) // previous set to 0 and now to actual data
+         .attr("y", d => yScale(d.downPayment)) 
+         .attr("height", d => height - yScale(d.downPayment)) 
          .attr("width", xScale.bandwidth())
          .attr("height", d => height - yScale(0))
          .attr("fill", "red")
@@ -231,6 +231,8 @@ d3.csv("incomeHousing.csv").then(data => {
          //could not figure out how to start effect on mouse scroll visibility so skipped
          //.transition() // transition effect
          //.duration(800) // how long transition lasts for
+         //.attr("y", d => yScale(d.downPayment)) // previous set to 0 and now to actual data
+         //.attr("height", d => height - yScale(d.downPayment)) // previous set to 0 and now to actual data
          //.delay((d, i) => i * 100); // adds a slight delay to transition. enables bars to come up one by one
          
          svg.selectAll(".downpayment-bar")
