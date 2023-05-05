@@ -86,7 +86,7 @@ function mouseover() {
     .style("opacity", 1); //calls in tooltip when mouseover is triggered
     d3.select(this) //this will make the bars change opacity and add a stroke
     .style("stroke", "black")// this helps create an animation type effect that helps see which bar you are viewing
-    .style("opacity", 1);
+    .style("opacity", 1)
     .style("transition", "opacity 0.2s ease-in-out");
   }
   
@@ -100,7 +100,7 @@ function mouseover() {
   
   function mouseleave() {
     tooltip
-    .style("opacity", 0)  //takes out tooltip when mouseleave is triggered
+    .style("opacity", 0);  //takes out tooltip when mouseleave is triggered
     d3.select(this)
       .style("stroke", "white")
       .style("opacity", 1)
