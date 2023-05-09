@@ -4,7 +4,7 @@ function createFourthChart() {
 
       const width = document.querySelector('.all-content-center').clientWidth * 0.7; // this will help ensure bar chart is centered
             height = window.innerHeight * 0.5, //reduced height since it looked too long after centering
-            margin = { top: 50, bottom: 50, left: 70, right: 100 },
+            margin = { top: 50, bottom: 50, left: 70, right: 80 },
             radius = 5;
 
 // append the svg object to the body of the page
