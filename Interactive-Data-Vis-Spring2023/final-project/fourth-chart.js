@@ -2,7 +2,7 @@ function createFourthChart() {
 // set the dimensions and margins of the graph
 
 
-      const width = document.querySelector('.all-content-center').clientWidth * 0.8; // this will help ensure bar chart is centered
+      const width = document.querySelector('.all-content-center').clientWidth * 0.95; // this will help ensure bar chart is centered
             height = window.innerHeight * 0.5, //reduced height since it looked too long after centering
             margin = { top: 50, bottom: 50, left: 70, right: 100 },
             radius = 5;
