@@ -23,11 +23,11 @@ h3 {
 }
 
 a {
-    color: yellow;
+    color: aqua;
 }
 
 a:hover {
-    color: white;
+    color: pink;
 }
 
 .image-container {
