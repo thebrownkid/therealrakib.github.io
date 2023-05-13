@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+.content-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+a {
+    color: yellow;
+}
+
+a:hover {
+    color: white;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-container img {
+    width: 48%;
+    height: auto;
+}
+
+.gif-container {
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.gif-container img {
+    width: 100%;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+
+    <title>Final Portfolio</title>
+</head>
+
+<body>
+    <div class="content-container">
+        <h1 style="text-align: center;"><u>FINAL PORTFOLIO</u></h1>
+        <h3 style="text-align: center;">Muhammad Rakibul Islam<br>for DATA 73200</h3>
+        
+        <br><br>
+
+        <h2 style="text-align: center;"><u>TABLE OF CONTENTS:</u></h2>
+       
+            <h3 style="text-align: center;"><a href="www.sample.com">Final Project</a></h3>
+            <h3 style="text-align: center;"><a href="www.sample.com">Updated Tutorial</a></h3>
+            <h3 style="text-align: center;"><a href="www.sample.com">Reflection</a></h3>
+
+        <br><br>
+     
+    <h2 style="text-align: center;"><u>FINAL PROJECT</u></h2>
+
+        <br>
+
+    <h3>Live Site Link: <a href="https://therealrakib.github.io/Interactive-Data-Vis-Spring2023/final-project/">Click Here To VIew</a></h3>
+    <h3>Project Abstract:</h3>
+    <p>
+        The project aims to analyze and understand the trends in homebuying accessibility in the United States studying how both affordability and mortgage eligibility changed over the years. The project has three broad guidelines which may be updated as the analysis is performed:
+    </p>
+    <ol>
+        <li>Studying the general trend in homebuying affordability and mortgage eligibility changes over the year, briefly outlining the reasoning for changes observed</li>
+        <li>Taking a closer look at affordability and mortgage eligibility broken into three income groups: top 10%, median, and minimum wage earners.</li>
+        <li>Asking the question of affordability broken down by race to check for racial discrepancies when it comes to homebuying accessibility.</li>
+    </ol>
+    <p>
+        In the final segment, basic policy suggestions that can help improve accessibility will be made for public policy and lawmaking.
+    </p>
+    <p>
+        The project aims to provide an introductory exploration of the topic of the general trends in homebuying affordability and mortgage eligibility in the United States since the year 1990 which can be used as a base for further analysis of the topic as well as discussions on the matter of public policy for subject matter improvement.
+    </p>
+
+    <h3>Proposed Site Architecture:</h3>
+    <ul>
+        <li>HTML, CSS &amp; JavaScript (D3.js in particular)</li>
+    </ul>
+
+    <h3>Screenshots from Project:</h3>
+
+    <div class="gif-container">
+       <img src="images/screenshot-1.jpeg" alt="screenshot-1">
+       <br><br>
+       <img src="images/screenshot.gif" alt="Screenshot">
+    </div>
+
+    <h3>Data Sources:</h3>
+    <ul>
+        <li>U.S. Census Bureau, Median Household Income in the United States [MEHOINUSA646N], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/MEHOINUSA646N">https://fred.stlouisfed.org/series/MEHOINUSA646N</a></li>
+        <li>Statista. (2022, September 22). U.S. median household income 1967-2021, by race. <a href="https://www.statista.com/statistics/1086359/median-household-income-race-us/">https://www.statista.com/statistics/1086359/median-household-income-race-us/</a></li>
+        <li>U.S. Census Bureau and U.S. Department of Housing and Urban Development, Median Sales Price of Houses Sold for the United States [MSPUS], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/MSPUS">https://fred.stlouisfed.org/series/MSPUS</a></li>
+        <li>Federal Reserve Bank of Cleveland, 10-Year Real Interest Rate [REAINTRATREARAT10Y], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/REAINTRATREARAT10Y">https://fred.stlouisfed.org/series/REAINTRATREARAT10Y</a></li>
+        <li>Pk. (2022). Household Income by Year: Average, Median, One Percent (and a Percentile Calculator). DQYDJ – Don’t Quit Your Day Job. <a href="https://dqydj.com/household-income-by-year/">https://dqydj.com/household-income-by-year/</a></li>
+    </ul>
+
+    <h3>Data Processing:</h3>
+    <p>
+        The first chart draws median household income from the MEHOINUSA646N dataset mentioned above and down payment is calculated as 20% of the home prices from the MSPUS dataset.
+    </p>
+    <p>
+        In the second chart 28% of month income is calculated in the following manner .28 *(Annual Income from MEHOINUSA646N/12).
+    </p>
+    <p>
+        As for the monthly mortgage, it is a little more complicated calculation done as follows: 
+    </p>
+    <p>
+        Some of the information was already available. I knew the median home sale price, and that a 20% down payment was to be made and considered the standard 30-year loan that most buyers use. The remaining data that was necessary was the average mortgage rate for a particular year which helps determine the monthly payment. 
+    </p>
+    <p>
+        Thankfully Excel has a very useful function called the PMT function which helps determine the monthly mortgage payment quite easily once all other data was available. But here is a quick rundown of the function and what numbers to use:
+    </p>
+    <p>
+        PMT Syntax: =PMT(rate, nper, pv, [fv], [type])
+    </p>
+    <p>
+        Arguments &amp; what value to use:
+    </p>
+    <ul>
+        <li>rate - The interest rate for the loan. This is the average mortgage rate for a particular year.</li>
+        <li>nper - The total number of payments for the loan. 12 months x 30 years = 360.</li>
+        <li>pv - The present value, or total value of all loan payments now. Calculated as home sales price minus down payment (actual value of the loan).</li>
+        <li>fv - [optional] The future value, or a cash balance you want after the last payment is made. Defaults to 0 (zero). Kept at default.</li>
+        <li>type - [optional] When payments are due. 0 = end of period. 1 = beginning of period. Default is 0. Also kept at default.</li>
+    </ul>
+    <p>
+        The third chart draws in median income from previous dataset, top 10% income from the DQYDJ website and minimum wage calculated as follows: minimum wage * standard work hours in a year and finding the 28% of monthly income for each of these. Now the 28% of income for each of the three income groups is divided by the monthly mortgage amount to calculate the standardized index where, holding all other factors satisfied, a value of 1 or above signifies mortgage qualification and vice versa.
+    </p>
+    <p>
+        For the fourth graph, the 20% down payment amount is the same as the first chart but the breakdown by race is taken from the dataset on Statista (which itself has been sourced from Census data).
+    </p>
+
+    <h3>Project Planning Sketches:</h3>
+
+    <div class="image-container">
+        <img src="images/Project-Sketch-01.jpg" alt="Image 1">
+        <img src="images/Project-Sketch-02.jpg" alt="Image 2">
+    </div>
+
+    <p>
+        <strong><i>Sketch continued in two parts since (left to right) it was too long when combined.</i></strong>
+    </p>
+
+    <h3>Proposed Plan for Data Analysis:</h3>
+    <ul>
+        <li>Comparing median annual household income to 20% of median home sale price (20% is a standard down payment amount and is used for better visualization purposes as the home sale price is much higher in comparison to income and harder to visualize)</li>
+        <li>Comparing the median monthly mortgage payment (calculated using median home sale price, a standard 20% down payment, and average interest rate for a year) to 28% of the median monthly household income (standard income threshold for mortgage qualification in the United States).</li>
+        <li>Creating a standardized index for mortgage eligibility (28% of monthly household income divided by median monthly mortgage payment) broken down into three income groups: top 10%, median, and minimum wage earners.</li>
+        <li>Comparing the income to the down payment (like the first analysis) but broken down for racial groups to check for affordability differences across races.</li>
+    </ul>
+
+    <br><br>
+
+    <h2 style="text-align: center;"><u>Updated Tutorial</u></h2>
+
+    <br><br>
+
+    <h2 style="text-align: center;"><u>Reflection</u></h2>
+
+    <p><u>Goal For Course & Evaluation:</u></p>
+
+    <p>At the start of this course, I set personal goals (mostly technical) to learn D3 to be able to create customized web friendly visualizations. I have used Tableau before and while it is great at its task of providing an ability to create simple visualizations with ease and speed, it is not customizable, its capabilities are limited (within a provided set of tools) and it is not always the friendliest when integrating to a custom site.</p>
+    <p>While there is still much to learn and skills to fine tune over time, I would say that I have gotten a thorough understanding of the foundations of D3 being able to write code, understand what the code actually does, understand that there can be different approaches to building the same feature and debug code. I have also learnt to integrate different types of charts in one and add interactivity which adds a whole new dimension to visualizations.</p>
+
+    <p><u>Takeaways, Reflections, Realizations:</u></p>
+    
+    <p>An important take away that I have from this course is the power of iterative development. While the bigger picture is always an important guide for any project, it is equally important to be able to break it down into parts, approach each step by step, test and get feedback (which can be both from others and personal) along the way and integrate those feedback towards molding the project again. This helps make the whole project development efficient, easier to tackle and with insights embedded along the way make the product more workable.</p>
+    <p>Another self-reflection that I had was the realization of how important data ethics can be for a project. As a data visualization practitioner, it is up to us to ensure that we think critically about what story we convey and how it can impact a reader / viewer who might not be knowledgeable on a certain topic and our visualizations can mold and shape their perspective on the matter. As such I thought of data visualization also a “tool of power” which in the right hands can be rewarding but in the wrong hands a deadly tool for manipulation.</p>
+    <p>Before this course I did not give much thought to interactivity which can significantly improve both the accessibility and scope of a project. It allows a user/viewer to see things in a new light, play around, identity further patterns that might be noticeable at first or just visually notice the differences between groups of information (especially when you have multiple charts / data represented in one).</p>
+    <p>Another take away I have is that the style of visualization is also a relevant consideration. Visualizations can be exploratory (where the viewer is free to play around themselves) or narrative style (where you tell a story through the data). It is important to understand when you use which especially with the consideration who your audience is because somebody might not be a topic expert and, in those cases, even if you do not make it fully narrative, including some background information is still important.</p>
+    <p>This also leads to an additional point which is that having an idea of who your audience is can properly guide how to approach a visualization project. You need to think from the perspective of your audience, take notes on potential difficulties they might have and use that as a guide.</p>
+    <p>While doing the final project, I learnt about managing time better. While you might have a ton of ideas in the beginning and most projects should be ones that are developed more over time, the real world can be very different. For example, you work for a client who needs to have certain visualizations done within a very strict deadline. In these cases, you have to actively make the decision of what parts of your project need to stay and what can be removed. You can always make notes of the parts you left out as points for improvement or further study. Setting manageable goals and checking in with yourself as the project progresses to update them can be helpful especially in a professional setting.</p>
+
+    <p><u>Updated Tutorial:</u></p>
+    
+    <p>I have updated tutorial 2_2 for the updated tutorial requirement of the final portfolio. In my graph, some of the circles overlap (because that is just how it should be) and that becomes an issue to decode the actual numbers. To help with that, I added a tooltip that when you hover the mouse over reduces the circle’s opacity, adds a white colored stroke to it, shows the tooltip with all information needed and then goes back to normal opacity when you move.</p>
+    <p>This massively improves the ease with which you can understand and interact with the graph. And it is my biggest takeaway from the course that adding elements of interactively really changes the visualization game.</p>
+    <p>Also, I added a transition effect that makes it look like the circles are each coming down from the top left of the chart into their respective places. This part has nothing to do with actual visualization, but I personally like transitions and effects which gives this kind of an animated, lively feeling.</p>
+    
+    <p><u>Areas For Improvement:</u></p>
+    
+    <p>The biggest challenge that I faced was the concept of design. I come from a rather technical background and while I can run complex calculations, perform data cleaning and advanced methods of analysis, I recognize that for visualizations, it is equally crucial to have a good sense of design. While I do understand that this course was not meant to dig deeper into the design side of things, that is a personal goal I want to set for myself to both learn from critiquing other visualizations and potentially taking courses on design. Being able to integrate good design practice and abilities with my data analysis skills can provide a major avenue for personal development and enable me to take new approaches to data storytelling (which is my primary motivation).</p>
+    <p>My motivation of being a better storyteller also provides another area for improvement which is writing. I think all data analysis and visualization practitioners would benefit from a journalism class of sorts, especially one that involves narrative writing in presenting matters in both a factual and engaging manner.</p>
+    <p>A technical issue that I faced, and I want to learn properly is that I was able to animate the first bar chart I had in way that it looked like the bars were coming up one by one for each year. However, the problem was that the effect loaded with the page so by the time a reader would scroll down to the chart it had already been run. So, I want to run better on how to start a specific transition when the viewer is on that part of the web page. I did see some tutorials on it but I could not learn it by the time the project was due so scraped that part.</p>
+    <p>I have touched on data ethics before and while I have taken coursework in ethics, it mostly involved the analysis side of things. So, a personal challenge is to read up more on the ethics of data visualization and trying to develop a framework that can be adapted to future projects as a guide.</p>
+
+    <p><u>Conclusion:</u></p>
+
+    <p>I have learnt skills in this course that I will most definitely need and continue using in both my academic and professional life. While I have learnt a lot, I do identity the need for continuous learning. While concepts of data visualization have been around for centuries, computational methods have been a relatively new practice. Also, technology keeps evolving at exponential speeds with new features, languages and approaches being developed almost daily. And with the AI revolution taking over, it will only change at a faster pace. As such, it is important to be a continuous learner, keeping up with the latest developments, staying in touch with the community and learning the new tools being developed.</p>
+
+    </div>
+    </body>
+    
+    </html>
+    
